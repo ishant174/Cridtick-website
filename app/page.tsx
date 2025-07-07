@@ -537,11 +537,11 @@ function TestimonialsSlider() {
   const testimonials = [
     {
       id: "testimonial-1",
-      name: "Vishal Nyati",
-      role: "CEO, TechStart Inc",
-      company: "magento360.com",
+      name: "Patrick McCarty",
+      role: "Project Manager",
+      company: "CJT Digital",
       content:
-        "It was a great experience working with Ishant. He has a strong understanding of Shopify and completed the job exceptionally well. Highly recommended!",
+        "Ishant did two separate Shopify related projects for me, both of which he executed perfectly. His work was timely, professional and communication was solid. I plan on hiring him again. Thank you!",
       rating: 5,
       avatar: "VN",
       project: "E-commerce Project",
