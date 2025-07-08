@@ -1343,7 +1343,7 @@ export default function Portfolio() {
 
                       <div className="grid grid-cols-2 gap-4 mb-6">
                         <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                          <div className="text-2xl font-bold text-white">50+</div>
+                          <div className="text-2xl font-bold text-white">100+</div>
                           <div className="text-green-200 text-sm">Stores Built</div>
                         </div>
                         <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
@@ -1353,7 +1353,7 @@ export default function Portfolio() {
                       </div>
 
                       <div className="flex flex-wrap gap-2 mb-6">
-                        {["Liquid", "Shopify Plus", "Custom Apps", "Theme Dev"].map((tech) => (
+                        {["Theme Customization","Liquid", "Shopify Plus", "Custom Apps","Shopify Fix"].map((tech) => (
                           <Badge key={tech} className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
                             {tech}
                           </Badge>
@@ -1529,7 +1529,7 @@ export default function Portfolio() {
                         {
                           icon: <Code2 className="w-8 h-8" />,
                           title: "Frontend",
-                          description: "React, Next.js, Vue.js, TypeScript, Tailwind CSS",
+                          description: "React, Next.js, TypeScript, Tailwind CSS",
                           color: "from-cyan-400 to-blue-500",
                         },
                         {
@@ -1547,7 +1547,7 @@ export default function Portfolio() {
                         {
                           icon: <Database className="w-8 h-8" />,
                           title: "Database",
-                          description: "MySQL, PostgreSQL, MongoDB, Redis, Firebase",
+                          description: "MySQL, PostgreSQL, MongoDB, Firebase",
                           color: "from-orange-400 to-red-500",
                         },
                       ].map((category, index) => (
@@ -1566,7 +1566,7 @@ export default function Portfolio() {
                     {/* Stats */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                       {[
-                        { number: "300+", label: "Total Projects", icon: <Rocket className="w-6 h-6" /> },
+                        { number: "200+", label: "Total Projects", icon: <Rocket className="w-6 h-6" /> },
                         { number: "15+", label: "Technologies", icon: <Layers className="w-6 h-6" /> },
                         { number: "98%", label: "Success Rate", icon: <TrendingUp className="w-6 h-6" /> },
                         { number: "4.9/5", label: "Avg Rating", icon: <Heart className="w-6 h-6" /> },
@@ -2251,7 +2251,7 @@ export default function Portfolio() {
               </div>
             </div>
             <div id="footer-bottom" className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-              <p>&copy; 2025 Cridtick. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Cridtick. All rights reserved.</p>
             </div>
           </div>
         </footer>
