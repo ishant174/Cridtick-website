@@ -8,7 +8,7 @@
 
 ## 📝 Overview
 
-This is a sleek and modern **professional portfolio website** designed to showcase personal or agency work. Built using best practices and enhanced with AI-assisted design ideas, the website is fully responsive, fast, and easy to maintain.
+We offer modern and results-driven web development services tailored for individuals, startups, and businesses. Our websites are built using best practices and enhanced with AI-assisted design and development, ensuring they are fully responsive, fast-loading, and optimized to attract and convert potential clients.
 
 It highlights:
 - Your services
