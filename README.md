@@ -19,10 +19,11 @@ It highlights:
 
 ## 🚀 Tech Stack
 
-- HTML5 / CSS3 / JavaScript
-- Tailwind CSS or Bootstrap (based on usage)
-- React or Vanilla JS (depending on project setup)
-- Deployed on **Vercel**
-- Custom domain: **cridtick.com**
+- **Next.js** – React framework for fast, scalable web applications
+- **Tailwind CSS** – Utility-first CSS framework for custom styling
+- **JavaScript / React** – For building interactive UI components
+- **Vercel** – Deployment and hosting platform
+- **Custom Domain** – [cridtick.com](https://www.cridtick.com)
+
 
 
