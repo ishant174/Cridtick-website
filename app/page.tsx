@@ -552,26 +552,31 @@ function TestimonialsSlider() {
       content:
         "Ishant did two separate Shopify related projects for me, both of which he executed perfectly. His work was timely, professional and communication was solid. I plan on hiring him again. Thank you!",
       rating: 5,
-      avatar: "VN",
+      avatar: "PM",
       project: "E-commerce Project",
       technology: "Shopify, Liquid",
       techColor: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
       result: "100% client satisfaction",
-      image: "/placeholder.svg?height=400&width=600&text=TechStart+E-commerce+Platform",
+      gradientFrom: "from-blue-500",
+      gradientTo: "to-cyan-500",
+      bgGradient: "from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20",
     },
     {
       id: "testimonial-2",
       name: "Mauro Auzinger",
       role: "E-commerce Director",
-      company: "",
-      content: "I would highly recommend working with Ishant. He's been incredibly fast and efficient with my requests",
+      company: "Digital Commerce Co.",
+      content:
+        "I would highly recommend working with Ishant. He's been incredibly fast and efficient with my requests. The quality of work exceeded my expectations and the turnaround time was impressive.",
       rating: 5,
       avatar: "MA",
       project: "Shopify Store",
       technology: "Shopify",
       techColor: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-      result: "Theme Customization successfully",
-      image: "/placeholder.svg?height=400&width=600&text=RetailPro+Shopify+Store",
+      result: "Theme Customization Success",
+      gradientFrom: "from-green-500",
+      gradientTo: "to-emerald-500",
+      bgGradient: "from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20",
     },
     {
       id: "testimonial-3",
@@ -585,13 +590,15 @@ function TestimonialsSlider() {
       project: "Corporate Website",
       technology: "Shopify",
       techColor: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
-      result: "Theme customization",
-      image: "/placeholder.svg?height=400&width=600&text=GrowthCorp+Website",
+      result: "Theme Customization",
+      gradientFrom: "from-purple-500",
+      gradientTo: "to-indigo-500",
+      bgGradient: "from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20",
     },
     {
       id: "testimonial-4",
       name: "Muhammad Asim Tahir",
-      role: "Founder,  Haxr IT Solutions",
+      role: "Founder",
       company: "Haxr IT Solutions",
       content:
         "⭐⭐⭐⭐⭐ Outstanding Shopify Expert – Highly Recommended! Ishant Gupta was an absolute pleasure to work with on my Shopify project. He understood my requirements perfectly and delivered a high-quality, customized Shopify store that exceeded my expectations. Their expertise in theme development, customization, and optimization was evident throughout the project",
@@ -599,16 +606,18 @@ function TestimonialsSlider() {
       avatar: "MT",
       project: "Shopify Website",
       technology: "Shopify",
-      techColor: "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200",
+      techColor: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
       result: "100% client expectations",
-      image: "/placeholder.svg?height=400&width=600&text=HealthTech+Patient+Portal",
+      gradientFrom: "from-orange-500",
+      gradientTo: "to-red-500",
+      bgGradient: "from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20",
     },
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
-    }, 5000)
+    }, 6000)
     return () => clearInterval(interval)
   }, [testimonials.length])
 
@@ -624,87 +633,191 @@ function TestimonialsSlider() {
 
   return (
     <div className="relative overflow-hidden">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        {/* Testimonial Content */}
-        <div className="space-y-6">
-          <div className="flex mb-4">
-            {Array.from({ length: currentTestimonialData.rating }).map((_, i) => (
-              <Star key={`star-${i}`} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
-            ))}
-          </div>
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div
+          className={`absolute top-10 left-10 w-72 h-72 bg-gradient-to-r ${currentTestimonialData.gradientFrom} ${currentTestimonialData.gradientTo} opacity-10 rounded-full blur-3xl animate-pulse`}
+        ></div>
+        <div
+          className={`absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r ${currentTestimonialData.gradientTo} ${currentTestimonialData.gradientFrom} opacity-10 rounded-full blur-3xl animate-pulse`}
+          style={{ animationDelay: "2s" }}
+        ></div>
+      </div>
 
-          <blockquote className="text-2xl md:text-3xl font-light italic text-gray-700 dark:text-gray-300 leading-relaxed">
-            "{currentTestimonialData.content}"
-          </blockquote>
+      {/* Main Testimonial Card */}
+      <div className="relative z-10">
+        <Card
+          className={`bg-gradient-to-br ${currentTestimonialData.bgGradient} border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden`}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent dark:from-white/10"></div>
+          <div className="absolute top-4 right-4 w-32 h-32 bg-white/20 rounded-full blur-2xl"></div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                {currentTestimonialData.avatar}
-              </div>
-              <div>
-                <p className="font-bold text-xl">{currentTestimonialData.name}</p>
-                <p className="text-gray-600 dark:text-gray-400">{currentTestimonialData.role}</p>
-                <p className="text-gray-500 text-sm">{currentTestimonialData.company}</p>
+          <CardContent className="p-12 relative z-10">
+            {/* Rating Stars */}
+            <div className="flex justify-center mb-8">
+              <div className="flex space-x-1 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full px-6 py-3">
+                {Array.from({ length: currentTestimonialData.rating }).map((_, i) => (
+                  <Star
+                    key={`star-${i}`}
+                    className="w-6 h-6 fill-yellow-400 text-yellow-400 animate-pulse"
+                    style={{ animationDelay: `${i * 100}ms` }}
+                  />
+                ))}
               </div>
             </div>
-            <div className="text-right">
-              <div className="flex flex-col gap-2 mb-2">
-                <Badge className={currentTestimonialData.techColor}>{currentTestimonialData.technology}</Badge>
-                <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-                  {currentTestimonialData.project}
-                </Badge>
-              </div>
-              <p className="text-2xl font-bold text-green-600">{currentTestimonialData.result}</p>
-            </div>
-          </div>
-        </div>
 
-        {/* Project Image */}
-        <div className="relative">
-          <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 overflow-hidden">
-            <img
-              src={currentTestimonialData.image || "/placeholder.svg"}
-              alt={`${currentTestimonialData.project} preview`}
-              className="w-full h-64 object-cover rounded-xl shadow-lg"
-            />
-          </div>
-        </div>
+            {/* Quote */}
+            <div className="text-center mb-8">
+              <div
+                className={`text-6xl font-bold bg-gradient-to-r ${currentTestimonialData.gradientFrom} ${currentTestimonialData.gradientTo} bg-clip-text text-transparent mb-4 opacity-30`}
+              >
+                "
+              </div>
+              <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 dark:text-gray-200 leading-relaxed max-w-4xl mx-auto">
+                {currentTestimonialData.content}
+              </blockquote>
+              <div
+                className={`text-6xl font-bold bg-gradient-to-r ${currentTestimonialData.gradientFrom} ${currentTestimonialData.gradientTo} bg-clip-text text-transparent mt-4 opacity-30 rotate-180 inline-block`}
+              >
+                "
+              </div>
+            </div>
+
+            {/* Client Info */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+              <div className="flex items-center space-x-4">
+                <div
+                  className={`w-20 h-20 bg-gradient-to-r ${currentTestimonialData.gradientFrom} ${currentTestimonialData.gradientTo} rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg transform hover:scale-110 transition-transform duration-300`}
+                >
+                  {currentTestimonialData.avatar}
+                </div>
+                <div className="text-center md:text-left">
+                  <p className="font-bold text-2xl text-gray-800 dark:text-gray-200">{currentTestimonialData.name}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-lg">{currentTestimonialData.role}</p>
+                  <p className="text-gray-500 dark:text-gray-500 font-medium">{currentTestimonialData.company}</p>
+                </div>
+              </div>
+
+              {/* Project Details */}
+              <div className="text-center">
+                <div className="flex flex-col gap-3 mb-3">
+                  <Badge className={`${currentTestimonialData.techColor} text-lg px-4 py-2 font-semibold`}>
+                    {currentTestimonialData.technology}
+                  </Badge>
+                  <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 text-lg px-4 py-2 font-semibold">
+                    {currentTestimonialData.project}
+                  </Badge>
+                </div>
+                <p
+                  className={`text-2xl font-bold bg-gradient-to-r ${currentTestimonialData.gradientFrom} ${currentTestimonialData.gradientTo} bg-clip-text text-transparent`}
+                >
+                  {currentTestimonialData.result}
+                </p>
+              </div>
+            </div>
+
+            {/* Project Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
+              <div className="text-center bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300">
+                <div
+                  className={`text-3xl font-bold bg-gradient-to-r ${currentTestimonialData.gradientFrom} ${currentTestimonialData.gradientTo} bg-clip-text text-transparent mb-2`}
+                >
+                  5.0★
+                </div>
+                <div className="text-gray-600 dark:text-gray-400 font-medium">Rating</div>
+              </div>
+              <div className="text-center bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300">
+                <div
+                  className={`text-3xl font-bold bg-gradient-to-r ${currentTestimonialData.gradientFrom} ${currentTestimonialData.gradientTo} bg-clip-text text-transparent mb-2`}
+                >
+                  100%
+                </div>
+                <div className="text-gray-600 dark:text-gray-400 font-medium">Satisfaction</div>
+              </div>
+              <div className="text-center bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300">
+                <div
+                  className={`text-3xl font-bold bg-gradient-to-r ${currentTestimonialData.gradientFrom} ${currentTestimonialData.gradientTo} bg-clip-text text-transparent mb-2`}
+                >
+                  On Time
+                </div>
+                <div className="text-gray-600 dark:text-gray-400 font-medium">Delivery</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
 
       {/* Navigation */}
-      <div className="flex items-center justify-between mt-8">
+      <div className="flex items-center justify-center mt-12 space-x-8">
         <div className="flex space-x-4">
           <Button
             variant="outline"
             size="icon"
             onClick={prevTestimonial}
-            className="w-12 h-12 rounded-full bg-transparent"
+            className={`w-14 h-14 rounded-full bg-gradient-to-r ${currentTestimonialData.gradientFrom} ${currentTestimonialData.gradientTo} text-white border-0 hover:scale-110 transition-all duration-300 shadow-lg`}
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-6 h-6" />
           </Button>
           <Button
             variant="outline"
             size="icon"
             onClick={nextTestimonial}
-            className="w-12 h-12 rounded-full bg-transparent"
+            className={`w-14 h-14 rounded-full bg-gradient-to-r ${currentTestimonialData.gradientFrom} ${currentTestimonialData.gradientTo} text-white border-0 hover:scale-110 transition-all duration-300 shadow-lg`}
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-6 h-6" />
           </Button>
         </div>
 
         {/* Indicators */}
-        <div className="flex space-x-2">
+        <div className="flex space-x-3">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentTestimonial(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentTestimonial ? "bg-blue-600 w-8" : "bg-gray-300 dark:bg-gray-600"
+              className={`h-3 rounded-full transition-all duration-300 ${
+                index === currentTestimonial
+                  ? `bg-gradient-to-r ${currentTestimonialData.gradientFrom} ${currentTestimonialData.gradientTo} w-12`
+                  : "bg-gray-300 dark:bg-gray-600 w-3 hover:bg-gray-400 dark:hover:bg-gray-500"
               }`}
             />
           ))}
         </div>
+      </div>
+
+      {/* All Testimonials Preview */}
+      <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {testimonials.map((testimonial, index) => (
+          <Card
+            key={testimonial.id}
+            className={`cursor-pointer transition-all duration-300 transform hover:scale-105 ${
+              index === currentTestimonial
+                ? `bg-gradient-to-br ${testimonial.bgGradient} shadow-xl border-2 border-gradient-to-r ${testimonial.gradientFrom} ${testimonial.gradientTo}`
+                : "bg-white/80 dark:bg-gray-800/80 hover:shadow-lg"
+            }`}
+            onClick={() => setCurrentTestimonial(index)}
+          >
+            <CardContent className="p-6">
+              <div className="flex items-center space-x-3 mb-4">
+                <div
+                  className={`w-12 h-12 bg-gradient-to-r ${testimonial.gradientFrom} ${testimonial.gradientTo} rounded-full flex items-center justify-center text-white font-bold`}
+                >
+                  {testimonial.avatar}
+                </div>
+                <div>
+                  <p className="font-bold text-sm">{testimonial.name}</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">{testimonial.company}</p>
+                </div>
+              </div>
+              <div className="flex mb-3">
+                {Array.from({ length: testimonial.rating }).map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-3">{testimonial.content}</p>
+              <Badge className={`${testimonial.techColor} text-xs mt-3`}>{testimonial.technology}</Badge>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </div>
   )
