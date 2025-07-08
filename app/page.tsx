@@ -21,6 +21,15 @@ import {
   Loader2,
   ChevronDown,
   ChevronUp,
+  Database,
+  Layers,
+  Cpu,
+  TrendingUp,
+  Award,
+  Sparkles,
+  Rocket,
+  Heart,
+  Play,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -555,8 +564,7 @@ function TestimonialsSlider() {
       name: "Mauro Auzinger",
       role: "E-commerce Director",
       company: "",
-      content:
-        "I would highly recommend working with Ishant. He's been incredibly fast and efficient with my requests",
+      content: "I would highly recommend working with Ishant. He's been incredibly fast and efficient with my requests",
       rating: 5,
       avatar: "MA",
       project: "Shopify Store",
@@ -585,7 +593,8 @@ function TestimonialsSlider() {
       name: "Muhammad Asim Tahir",
       role: "Founder,  Haxr IT Solutions",
       company: "Haxr IT Solutions",
-      content:"⭐⭐⭐⭐⭐ Outstanding Shopify Expert – Highly Recommended! Ishant Gupta was an absolute pleasure to work with on my Shopify project. He understood my requirements perfectly and delivered a high-quality, customized Shopify store that exceeded my expectations. Their expertise in theme development, customization, and optimization was evident throughout the project",
+      content:
+        "⭐⭐⭐⭐⭐ Outstanding Shopify Expert – Highly Recommended! Ishant Gupta was an absolute pleasure to work with on my Shopify project. He understood my requirements perfectly and delivered a high-quality, customized Shopify store that exceeded my expectations. Their expertise in theme development, customization, and optimization was evident throughout the project",
       rating: 5,
       avatar: "MT",
       project: "Shopify Website",
@@ -593,7 +602,7 @@ function TestimonialsSlider() {
       techColor: "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200",
       result: "100% client expectations",
       image: "/placeholder.svg?height=400&width=600&text=HealthTech+Patient+Portal",
-    }
+    },
   ]
 
   useEffect(() => {
@@ -929,6 +938,7 @@ export default function Portfolio() {
   // Navigation items - Updated to match actual sections
   const navigationItems = [
     { name: "Home", href: "#home-section" },
+    { name: "Services", href: "#services-section" },
     { name: "Testimonials", href: "#testimonials-section" },
     { name: "Free Audit", href: "#website-audit-section" },
     { name: "Platforms", href: "#social-proof-section" },
@@ -1159,6 +1169,335 @@ export default function Portfolio() {
                 >
                   <CodeCarousel />
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Services Section - Completely Redesigned */}
+          <section id="services-section" className="py-32 relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 dark:from-slate-900 dark:via-blue-900/20 dark:to-purple-900/20"></div>
+            <div className="absolute top-0 left-0 w-full h-full">
+              <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
+              <div
+                className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl animate-pulse"
+                style={{ animationDelay: "2s" }}
+              ></div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              {/* Header */}
+              <div className="text-center mb-20">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full mb-6 animate-bounce">
+                  <Sparkles className="w-5 h-5" />
+                  <span className="font-semibold">Our Expertise</span>
+                  <Rocket className="w-5 h-5" />
+                </div>
+
+                <h2 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent">
+                  Services That
+                  <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient-text">
+                    Transform Ideas
+                  </span>
+                </h2>
+
+                <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                  From cutting-edge e-commerce platforms to custom web applications, we deliver solutions that drive
+                  growth and exceed expectations
+                </p>
+              </div>
+
+              {/* Featured Services Grid */}
+              <div className="grid lg:grid-cols-3 gap-8 mb-20">
+                {/* Primary Service - Shopify */}
+                <div className="lg:col-span-2 group">
+                  <Card className="h-full bg-gradient-to-br from-green-500 to-emerald-600 border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                    <div className="absolute top-4 right-4 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                    <CardContent className="p-8 relative z-10">
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                          <Globe className="w-8 h-8 text-white" />
+                        </div>
+                        <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">Most Popular</Badge>
+                      </div>
+
+                      <h3 className="text-3xl font-bold text-white mb-4">Shopify Development</h3>
+                      <p className="text-green-100 text-lg mb-6 leading-relaxed">
+                        Custom Shopify stores with advanced features, theme development, app integrations, and
+                        conversion optimization that drive sales and enhance user experience.
+                      </p>
+
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                          <div className="text-2xl font-bold text-white">50+</div>
+                          <div className="text-green-200 text-sm">Stores Built</div>
+                        </div>
+                        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                          <div className="text-2xl font-bold text-white">4.9★</div>
+                          <div className="text-green-200 text-sm">Client Rating</div>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {["Liquid", "Shopify Plus", "Custom Apps", "Theme Dev"].map((tech) => (
+                          <Badge key={tech} className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      <Button
+                        className="bg-white text-green-600 hover:bg-green-50 font-semibold group-hover:scale-105 transition-all duration-300"
+                        onClick={handleContactButtonClick}
+                      >
+                        Start Shopify Project
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Secondary Service - React */}
+                <div className="group">
+                  <Card className="h-full bg-gradient-to-br from-blue-500 to-cyan-600 border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                    <div className="absolute top-4 right-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+                    <CardContent className="p-6 relative z-10">
+                      <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                        <Code2 className="w-7 h-7 text-white" />
+                      </div>
+
+                      <h3 className="text-2xl font-bold text-white mb-3">React Development</h3>
+                      <p className="text-blue-100 mb-4 leading-relaxed">
+                        Modern React applications with Next.js, TypeScript, and cutting-edge UI/UX design.
+                      </p>
+
+                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 mb-4">
+                        <div className="text-xl font-bold text-white">40+</div>
+                        <div className="text-blue-200 text-sm">Apps Built</div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {["React 18", "Next.js", "TypeScript"].map((tech) => (
+                          <Badge key={tech} className="bg-white/20 text-white border-white/30 backdrop-blur-sm text-xs">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      <Button
+                        className="w-full bg-white text-blue-600 hover:bg-blue-50 font-semibold group-hover:scale-105 transition-all duration-300"
+                        onClick={handleContactButtonClick}
+                      >
+                        Get Quote
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Services Grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                {[
+                  {
+                    icon: <Server className="w-6 h-6" />,
+                    title: "Node.js Backend",
+                    description: "Scalable server-side applications with Express.js and database integration",
+                    gradient: "from-green-600 to-teal-600",
+                    projects: "35+",
+                    technologies: ["Node.js", "Express", "MongoDB"],
+                  },
+                  {
+                    icon: <Database className="w-6 h-6" />,
+                    title: "API Development",
+                    description: "RESTful APIs, GraphQL, and microservices architecture",
+                    gradient: "from-purple-500 to-indigo-600",
+                    projects: "45+",
+                    technologies: ["REST", "GraphQL", "JWT"],
+                  },
+                  {
+                    icon: <Layers className="w-6 h-6" />,
+                    title: "PHP Development",
+                    description: "Custom PHP applications and Laravel framework solutions",
+                    gradient: "from-indigo-500 to-purple-600",
+                    projects: "30+",
+                    technologies: ["PHP 8+", "Laravel", "MySQL"],
+                  },
+                  {
+                    icon: <Globe className="w-6 h-6" />,
+                    title: "WordPress",
+                    description: "Custom themes, plugins, and WooCommerce development",
+                    gradient: "from-blue-600 to-indigo-600",
+                    projects: "60+",
+                    technologies: ["Themes", "Plugins", "WooCommerce"],
+                  },
+                ].map((service, index) => (
+                  <Card
+                    key={index}
+                    className="group bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 overflow-hidden relative"
+                  >
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                    ></div>
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500"></div>
+
+                    <CardContent className="p-6 relative z-10">
+                      <div
+                        className={`w-12 h-12 bg-gradient-to-r ${service.gradient} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg`}
+                      >
+                        <div className="text-white">{service.icon}</div>
+                      </div>
+
+                      <h3 className="text-lg font-bold mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                        {service.title}
+                      </h3>
+
+                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                        {service.description}
+                      </p>
+
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {service.technologies.map((tech, techIndex) => (
+                          <Badge
+                            key={techIndex}
+                            variant="secondary"
+                            className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      <div className="flex items-center justify-between">
+                        <div className="text-center">
+                          <div className="font-bold text-blue-600">{service.projects}</div>
+                          <div className="text-xs text-gray-500">Projects</div>
+                        </div>
+                        <Button
+                          size="sm"
+                          className={`bg-gradient-to-r ${service.gradient} hover:opacity-90 text-white group-hover:scale-105 transition-all duration-300`}
+                          onClick={handleContactButtonClick}
+                        >
+                          <Play className="w-3 h-3" />
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Technology Stack Showcase */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl blur-xl opacity-20 animate-pulse"></div>
+                <Card className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 border-0 shadow-2xl rounded-3xl overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl transform translate-x-32 -translate-y-32"></div>
+                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full blur-2xl transform -translate-x-24 translate-y-24"></div>
+
+                  <CardContent className="p-12 relative z-10">
+                    <div className="text-center mb-12">
+                      <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full mb-6">
+                        <Award className="w-5 h-5" />
+                        <span className="font-semibold">Complete Technology Stack</span>
+                        <Cpu className="w-5 h-5" />
+                      </div>
+
+                      <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Powered by Modern Tech</h3>
+                      <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        We leverage cutting-edge technologies to build scalable, secure, and high-performance solutions
+                        that grow with your business
+                      </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                      {[
+                        {
+                          icon: <Code2 className="w-8 h-8" />,
+                          title: "Frontend",
+                          description: "React, Next.js, Vue.js, TypeScript, Tailwind CSS",
+                          color: "from-cyan-400 to-blue-500",
+                        },
+                        {
+                          icon: <Server className="w-8 h-8" />,
+                          title: "Backend",
+                          description: "Node.js, PHP, Laravel, Express.js, RESTful APIs",
+                          color: "from-green-400 to-emerald-500",
+                        },
+                        {
+                          icon: <Globe className="w-8 h-8" />,
+                          title: "Platforms",
+                          description: "Shopify, WordPress, WooCommerce, Custom CMS",
+                          color: "from-purple-400 to-pink-500",
+                        },
+                        {
+                          icon: <Database className="w-8 h-8" />,
+                          title: "Database",
+                          description: "MySQL, PostgreSQL, MongoDB, Redis, Firebase",
+                          color: "from-orange-400 to-red-500",
+                        },
+                      ].map((category, index) => (
+                        <div key={index} className="text-center group">
+                          <div
+                            className={`w-20 h-20 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}
+                          >
+                            <div className="text-white">{category.icon}</div>
+                          </div>
+                          <h4 className="text-xl font-bold text-white mb-3">{category.title}</h4>
+                          <p className="text-blue-100 text-sm leading-relaxed">{category.description}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Stats */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                      {[
+                        { number: "300+", label: "Total Projects", icon: <Rocket className="w-6 h-6" /> },
+                        { number: "15+", label: "Technologies", icon: <Layers className="w-6 h-6" /> },
+                        { number: "98%", label: "Success Rate", icon: <TrendingUp className="w-6 h-6" /> },
+                        { number: "4.9/5", label: "Avg Rating", icon: <Heart className="w-6 h-6" /> },
+                      ].map((stat, index) => (
+                        <div key={index} className="group">
+                          <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300">
+                            <div className="text-white">{stat.icon}</div>
+                          </div>
+                          <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">
+                            {stat.number}
+                          </div>
+                          <div className="text-blue-200 text-sm font-medium">{stat.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Call to Action */}
+              <div className="text-center mt-16">
+                <div className="inline-flex items-center gap-4">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                    onClick={handleContactButtonClick}
+                  >
+                    <Sparkles className="mr-2 w-5 h-5" />
+                    Start Your Project Today
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="px-8 py-4 text-lg font-semibold rounded-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 bg-transparent"
+                    onClick={() => window.open("https://calendly.com/itsishantgupta/project-discussioon", "_blank")}
+                  >
+                    <Calendar className="mr-2 w-5 h-5" />
+                    Schedule Consultation
+                  </Button>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 mt-4 text-lg">
+                  Free consultation • No commitment • Expert advice
+                </p>
               </div>
             </div>
           </section>
