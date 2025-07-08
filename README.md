@@ -1,30 +1,28 @@
-# Professional portfolio website
+# Cridtick website
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com)
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/ishant174s-projects/v0-professional-portfolio-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/5htZ1MXxKWm)
+## 🌐 Live Website
 
-## Overview
+👉 **[Visit Live → www.cridtick.com](https://www.cridtick.com/)**
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## 📝 Overview
 
-## Deployment
+This is a sleek and modern **professional portfolio website** designed to showcase personal or agency work. Built using best practices and enhanced with AI-assisted design ideas, the website is fully responsive, fast, and easy to maintain.
 
-Your project is live at:
+It highlights:
+- Your services
+- Past projects or case studies
+- About section
+- Contact form or details
+- Modern user experience and design aesthetics
 
-**[https://vercel.com/ishant174s-projects/v0-professional-portfolio-website](https://vercel.com/ishant174s-projects/v0-professional-portfolio-website)**
+## 🚀 Tech Stack
 
-## Build your app
+- HTML5 / CSS3 / JavaScript
+- Tailwind CSS or Bootstrap (based on usage)
+- React or Vanilla JS (depending on project setup)
+- Deployed on **Vercel**
+- Custom domain: **cridtick.com**
 
-Continue building your app on:
 
-**[https://v0.dev/chat/projects/5htZ1MXxKWm](https://v0.dev/chat/projects/5htZ1MXxKWm)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
