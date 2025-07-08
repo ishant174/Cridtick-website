@@ -1,29 +1,30 @@
-# Cridtick website
+# Professional portfolio website
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com)
+*Automatically synced with your [v0.dev](https://v0.dev) deployments*
 
-## 🌐 Live Website
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/ishant174s-projects/v0-professional-portfolio-website)
+[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/5htZ1MXxKWm)
 
-👉 **[Visit Live → www.cridtick.com](https://www.cridtick.com/)**
+## Overview
 
-## 📝 Overview
+This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
+Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
 
-We offer modern and results-driven web development services tailored for individuals, startups, and businesses. Our websites are built using best practices and enhanced with AI-assisted design and development, ensuring they are fully responsive, fast-loading, and optimized to attract and convert potential clients.
+## Deployment
 
-It highlights:
-- Your services
-- Past projects or case studies
-- About section
-- Contact form or details
-- Modern user experience and design aesthetics
+Your project is live at:
 
-## 🚀 Tech Stack
+**[https://vercel.com/ishant174s-projects/v0-professional-portfolio-website](https://vercel.com/ishant174s-projects/v0-professional-portfolio-website)**
 
-- **Next.js** – React framework for fast, scalable web applications
-- **Tailwind CSS** – Utility-first CSS framework for custom styling
-- **JavaScript / React** – For building interactive UI components
-- **Vercel** – Deployment and hosting platform
-- **Custom Domain** – [cridtick.com](https://www.cridtick.com)
+## Build your app
 
+Continue building your app on:
 
+**[https://v0.dev/chat/projects/5htZ1MXxKWm](https://v0.dev/chat/projects/5htZ1MXxKWm)**
 
+## How It Works
+
+1. Create and modify your project using [v0.dev](https://v0.dev)
+2. Deploy your chats from the v0 interface
+3. Changes are automatically pushed to this repository
+4. Vercel deploys the latest version from this repository

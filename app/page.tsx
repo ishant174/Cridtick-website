@@ -24,12 +24,19 @@ import {
   Database,
   Layers,
   Cpu,
-  TrendingUp,
   Award,
   Sparkles,
   Rocket,
   Heart,
   Play,
+  Phone,
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
+  MapPin,
+  Clock,
+  CheckCircle,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -39,7 +46,6 @@ import { Notification } from "@/components/notification"
 import { sendContactEmail } from "./actions"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Phone, Github, Linkedin, Twitter, Mail, MapPin, Clock, CheckCircle } from "lucide-react"
 
 // Animated Background Component with Moving Code
 function AnimatedBackground() {
@@ -61,43 +67,47 @@ function AnimatedBackground() {
     }
     setParticles(newParticles)
 
-    // Generate moving code lines
+    // Generate moving code lines with SEO-focused snippets
     const codeSnippets = [
-      "const handleClick = () => {",
-      "import React from 'react';",
-      "export default function App() {",
-      "useState(false);",
-      "useEffect(() => {",
-      "return <div className='container'>",
-      "npm install react",
-      "git commit -m 'initial commit'",
-      "async function fetchData() {",
-      "const [data, setData] = useState();",
-      "if (condition) {",
-      "} else {",
-      "map((item) => (",
-      "filter(item => item.active)",
-      "reduce((acc, curr) => acc + curr)",
-      "Promise.all([",
-      "try {",
-      "} catch (error) {",
-      "console.log('Hello World');",
-      "document.getElementById('app')",
-      "addEventListener('click', handler)",
-      "setTimeout(() => {",
-      "setInterval(() => {",
-      "JSON.stringify(data)",
-      "localStorage.getItem('token')",
-      "fetch('/api/users')",
-      ".then(response => response.json())",
-      "Object.keys(data).map(",
-      "Array.from({length: 10})",
-      "Math.random() * 100",
-      "new Date().toISOString()",
-      "<?php echo 'Hello World'; ?>",
-      "{% assign products = collections.all.products %}",
-      "$products = Product::all();",
+      "// Shopify Liquid Code",
+      "{% for product in collections.all.products %}",
       "{{ product.title | escape }}",
+      "{% if product.available %}",
+      "// WordPress PHP Code",
+      "<?php get_header(); ?>",
+      "add_action('wp_head', 'custom_seo');",
+      "// Custom PHP Development",
+      "class ShopifyAPI {",
+      "public function getProducts() {",
+      "// React Component",
+      "const ShopifyTheme = () => {",
+      "useEffect(() => {",
+      "// Laravel PHP Framework",
+      "$products = Product::all();",
+      "Route::get('/api/products');",
+      "// WordPress Hooks",
+      "add_filter('the_content');",
+      "wp_enqueue_script('custom');",
+      "// Shopify Theme Development",
+      "{% assign cart_total = cart.total_price %}",
+      "{{ 'theme.css' | asset_url | stylesheet_tag }}",
+      "// PHP MySQL Database",
+      "SELECT * FROM products WHERE active = 1",
+      "mysqli_query($connection, $sql);",
+      "// WordPress Custom Post Types",
+      "register_post_type('portfolio');",
+      "// Shopify App Development",
+      "const shopify = new Shopify({",
+      "// Custom Web Development",
+      "fetch('/api/shopify/products')",
+      ".then(response => response.json())",
+      "// E-commerce Solutions",
+      "if (user.isAuthenticated) {",
+      "addToCart(productId, quantity);",
+      "// SEO Optimization",
+      "<meta name='description' content=''>",
+      "// Performance Optimization",
+      "const lazyLoad = new IntersectionObserver();",
     ]
 
     const newCodeLines = []
@@ -160,28 +170,28 @@ function AnimatedBackground() {
       {/* Floating Code Snippets */}
       <div id="floating-code-snippets" className="absolute inset-0">
         <div className="floating-code absolute top-10 left-10 text-purple-500/30 dark:text-purple-400/40 font-mono text-lg animate-float">
-          {"function() {"}
+          {"{% Shopify Liquid %}"}
         </div>
         <div className="floating-code absolute top-20 right-20 text-cyan-500/30 dark:text-cyan-400/40 font-mono text-base animate-float-delayed">
-          {"const app = () =>"}
+          {"<?php WordPress ?>"}
         </div>
         <div className="floating-code absolute top-40 left-1/4 text-green-500/30 dark:text-green-400/40 font-mono text-sm animate-float-slow">
-          {"import React from 'react'"}
+          {"// Custom PHP Code"}
         </div>
         <div className="floating-code absolute top-60 right-1/3 text-pink-500/30 dark:text-pink-400/40 font-mono text-lg animate-float">
-          {"<Component />"}
+          {"<React Component />"}
         </div>
         <div className="floating-code absolute bottom-40 left-20 text-yellow-500/30 dark:text-yellow-400/40 font-mono text-base animate-float-delayed">
-          {"npm install"}
+          {"Laravel Framework"}
         </div>
         <div className="floating-code absolute bottom-60 right-40 text-red-500/30 dark:text-red-400/40 font-mono text-sm animate-float-slow">
-          {"git commit -m"}
+          {"E-commerce Solutions"}
         </div>
         <div className="floating-code absolute top-80 left-1/2 text-indigo-500/30 dark:text-indigo-400/40 font-mono text-base animate-float">
-          {"export default"}
+          {"Shopify Expert"}
         </div>
         <div className="floating-code absolute bottom-20 left-1/3 text-orange-500/30 dark:text-orange-400/40 font-mono text-lg animate-float-delayed">
-          {"useState()"}
+          {"Web Development"}
         </div>
       </div>
 
@@ -189,17 +199,17 @@ function AnimatedBackground() {
       <div id="scrolling-code-blocks" className="absolute inset-0">
         <div className="scrolling-code-horizontal top-1/4">
           <div className="code-line text-emerald-500/20 dark:text-emerald-400/30">
-            {"const data = await fetch('/api/endpoint').then(res => res.json()); // API call"}
+            {"// Professional Shopify theme customization and development services"}
           </div>
         </div>
         <div className="scrolling-code-horizontal top-1/2" style={{ animationDelay: "3s" }}>
           <div className="code-line text-violet-500/20 dark:text-violet-400/30">
-            {"useEffect(() => { setLoading(true); fetchData(); }, [dependency]); // React Hook"}
+            {"// Expert WordPress development and custom PHP applications"}
           </div>
         </div>
         <div className="scrolling-code-horizontal top-3/4" style={{ animationDelay: "6s" }}>
           <div className="code-line text-rose-500/20 dark:text-rose-400/30">
-            {"const handleSubmit = (e) => { e.preventDefault(); validateForm(); }; // Form handler"}
+            {"// E-commerce solutions and web development services worldwide"}
           </div>
         </div>
       </div>
@@ -317,102 +327,114 @@ function AnimatedBackground() {
   )
 }
 
-// Sliding Code Carousel Component
+// Sliding Code Carousel Component - Updated with SEO-focused content
 function CodeCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const codeExamples = [
     {
       id: 1,
-      title: "React Development",
-      subtitle: "Modern Web Applications",
-      icon: <Code2 className="w-6 h-6 text-white" />,
-      iconBg: "from-blue-500 to-cyan-500",
-      filename: "components/App.jsx",
-      code: [
-        { text: "const App = () => {", color: "text-purple-400" },
-        { text: "  return (", color: "text-gray-300", indent: true },
-        { text: "    <div className='app'>", color: "text-green-400", indent: true },
-        { text: "      // Your amazing app", color: "text-cyan-400", indent: true },
-        { text: "    </div>", color: "text-green-400", indent: true },
-        { text: "  )", color: "text-gray-300", indent: true },
-        { text: "}", color: "text-purple-400" },
-      ],
-      stats: [
-        { value: "47", label: "Components", color: "text-green-500" },
-        { value: "12", label: "APIs", color: "text-blue-500" },
-        { value: "8", label: "Pages", color: "text-purple-500" },
-      ],
-    },
-    {
-      id: 2,
-      title: "Shopify Development",
-      subtitle: "E-commerce Solutions",
+      title: "Shopify Theme Development",
+      subtitle: "Custom Shopify Themes & Liquid Code",
       icon: <Smartphone className="w-6 h-6 text-white" />,
       iconBg: "from-green-500 to-emerald-500",
-      filename: "templates/product.liquid",
+      filename: "sections/product-form.liquid",
       code: [
+        { text: "{% comment %} Custom Shopify Theme Development {% endcomment %}", color: "text-gray-400" },
         { text: "{% assign product = products[handle] %}", color: "text-purple-400" },
-        { text: "<div class='product-card'>", color: "text-green-400", indent: true },
-        { text: "  <h2>{{ product.title | escape }}</h2>", color: "text-cyan-400", indent: true },
-        { text: "  <p>{{ product.price | money }}</p>", color: "text-yellow-400", indent: true },
+        { text: "<div class='product-form'>", color: "text-green-400", indent: true },
+        { text: "  <h1>{{ product.title | escape }}</h1>", color: "text-cyan-400", indent: true },
+        { text: "  <span class='price'>{{ product.price | money }}</span>", color: "text-yellow-400", indent: true },
         { text: "  {% if product.available %}", color: "text-purple-400", indent: true },
-        { text: "    <button>Add to Cart</button>", color: "text-green-400", indent: true },
+        { text: "    <button type='submit'>Add to Cart</button>", color: "text-green-400", indent: true },
         { text: "  {% endif %}", color: "text-purple-400", indent: true },
         { text: "</div>", color: "text-green-400" },
       ],
       stats: [
-        { value: "25", label: "Stores", color: "text-green-500" },
-        { value: "150K", label: "Orders", color: "text-blue-500" },
-        { value: "99%", label: "Uptime", color: "text-purple-500" },
+        { value: "100+", label: "Shopify Stores", color: "text-green-500" },
+        { value: "50+", label: "Custom Themes", color: "text-blue-500" },
+        { value: "4.9★", label: "Client Rating", color: "text-purple-500" },
+      ],
+    },
+    {
+      id: 2,
+      title: "WordPress Development",
+      subtitle: "Custom WordPress Sites & Plugins",
+      icon: <Globe className="w-6 h-6 text-white" />,
+      iconBg: "from-blue-500 to-cyan-500",
+      filename: "functions.php",
+      code: [
+        { text: "<?php", color: "text-purple-400" },
+        { text: "// Custom WordPress Development", color: "text-gray-400" },
+        { text: "function custom_theme_setup() {", color: "text-blue-400", indent: true },
+        { text: "  add_theme_support('post-thumbnails');", color: "text-green-400", indent: true },
+        { text: "  register_nav_menus(array(", color: "text-cyan-400", indent: true },
+        { text: "    'primary' => 'Primary Menu',", color: "text-yellow-400", indent: true },
+        { text: "    'footer' => 'Footer Menu'", color: "text-orange-400", indent: true },
+        { text: "  ));", color: "text-cyan-400", indent: true },
+        { text: "}", color: "text-blue-400" },
+        { text: "add_action('after_setup_theme', 'custom_theme_setup');", color: "text-purple-400" },
+      ],
+      stats: [
+        { value: "80+", label: "WP Sites", color: "text-green-500" },
+        { value: "25+", label: "Custom Plugins", color: "text-blue-500" },
+        { value: "100%", label: "SEO Optimized", color: "text-purple-500" },
       ],
     },
     {
       id: 3,
       title: "PHP Development",
-      subtitle: "Server-Side Solutions",
+      subtitle: "Custom PHP Applications & Laravel",
       icon: <Server className="w-6 h-6 text-white" />,
       iconBg: "from-purple-500 to-pink-500",
-      filename: "controllers/ProductController.php",
+      filename: "app/Http/Controllers/ProductController.php",
       code: [
         { text: "<?php", color: "text-purple-400" },
-        { text: "class ProductController {", color: "text-blue-400", indent: true },
+        { text: "// Laravel PHP Development", color: "text-gray-400" },
+        { text: "class ProductController extends Controller {", color: "text-blue-400", indent: true },
         { text: "  public function index() {", color: "text-green-400", indent: true },
-        { text: "    $products = Product::all();", color: "text-cyan-400", indent: true },
-        { text: "    return view('products', [", color: "text-yellow-400", indent: true },
-        { text: "      'products' => $products", color: "text-orange-400", indent: true },
-        { text: "    ]);", color: "text-yellow-400", indent: true },
+        { text: "    $products = Product::with('category')", color: "text-cyan-400", indent: true },
+        { text: "                      ->where('active', true)", color: "text-cyan-400", indent: true },
+        { text: "                      ->paginate(12);", color: "text-cyan-400", indent: true },
+        { text: "    return view('products.index', compact('products'));", color: "text-yellow-400", indent: true },
         { text: "  }", color: "text-green-400", indent: true },
         { text: "}", color: "text-blue-400" },
       ],
       stats: [
-        { value: "32", label: "APIs", color: "text-green-500" },
-        { value: "5M", label: "Requests", color: "text-blue-500" },
-        { value: "24/7", label: "Support", color: "text-purple-500" },
+        { value: "60+", label: "PHP Projects", color: "text-green-500" },
+        { value: "15+", label: "Laravel Apps", color: "text-blue-500" },
+        { value: "99%", label: "Uptime", color: "text-purple-500" },
       ],
     },
     {
       id: 4,
-      title: "WordPress Development",
-      subtitle: "Content Management",
-      icon: <Globe className="w-6 h-6 text-white" />,
+      title: "React Development",
+      subtitle: "Modern Web Applications",
+      icon: <Code2 className="w-6 h-6 text-white" />,
       iconBg: "from-orange-500 to-red-500",
-      filename: "functions.php",
+      filename: "components/ShopifyProduct.jsx",
       code: [
-        { text: "<?php", color: "text-purple-400" },
-        { text: "function custom_theme_setup() {", color: "text-blue-400", indent: true },
-        { text: "  add_theme_support('post-thumbnails');", color: "text-green-400", indent: true },
-        { text: "  register_nav_menus([", color: "text-cyan-400", indent: true },
-        { text: "    'primary' => 'Primary Menu',", color: "text-yellow-400", indent: true },
-        { text: "    'footer' => 'Footer Menu'", color: "text-orange-400", indent: true },
-        { text: "  ]);", color: "text-cyan-400", indent: true },
-        { text: "}", color: "text-blue-400" },
-        { text: "add_action('after_setup_theme', 'custom_theme_setup');", color: "text-purple-400" },
+        { text: "// React Component for Shopify Integration", color: "text-gray-400" },
+        { text: "import React, { useState, useEffect } from 'react';", color: "text-purple-400" },
+        { text: "const ShopifyProduct = ({ productId }) => {", color: "text-blue-400", indent: true },
+        { text: "  const [product, setProduct] = useState(null);", color: "text-green-400", indent: true },
+        { text: "  const [loading, setLoading] = useState(true);", color: "text-cyan-400", indent: true },
+        { text: "  useEffect(() => {", color: "text-yellow-400", indent: true },
+        { text: "    fetchShopifyProduct(productId)", color: "text-orange-400", indent: true },
+        { text: "      .then(setProduct)", color: "text-orange-400", indent: true },
+        { text: "      .finally(() => setLoading(false));", color: "text-orange-400", indent: true },
+        { text: "  }, [productId]);", color: "text-yellow-400", indent: true },
+        {
+          text: "  return loading ? <Spinner /> : <ProductCard product={product} />;",
+          color: "text-green-400",
+          indent: true,
+        },
+        { text: "};", color: "text-blue-400" },
       ],
       stats: [
-        { value: "18", label: "Themes", color: "text-green-500" },
-        { value: "45", label: "Plugins", color: "text-blue-500" },
-        { value: "200+", label: "Sites", color: "text-purple-500" },
+        { value: "40+", label: "React Apps", color: "text-green-500" },
+        { value: "20+", label: "Next.js Sites", color: "text-blue-500" },
+        { value: "Fast", label: "Performance", color: "text-purple-500" },
       ],
     },
   ]
@@ -436,7 +458,7 @@ function CodeCarousel() {
   const currentExample = codeExamples[currentSlide]
 
   return (
-    <div id="code-carousel" className="relative" role="region" aria-label="Code Examples Carousel">
+    <div id="code-carousel" className="relative" role="region" aria-label="Web Development Services Showcase">
       <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl p-8 overflow-hidden">
         <div className="space-y-6">
           {/* Header with slide animation */}
@@ -450,7 +472,7 @@ function CodeCarousel() {
               {currentExample.icon}
             </div>
             <div className="transform transition-all duration-500">
-              <p className="font-bold text-lg">{currentExample.title}</p>
+              <h3 className="font-bold text-lg">{currentExample.title}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">{currentExample.subtitle}</p>
             </div>
           </div>
@@ -504,7 +526,7 @@ function CodeCarousel() {
             size="icon"
             onClick={prevSlide}
             className="w-8 h-8 bg-white/20 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-white/30 dark:hover:bg-gray-700/50 transition-all duration-300"
-            aria-label="Previous slide"
+            aria-label="Previous development service example"
           >
             <ChevronLeft className="w-4 h-4" />
           </Button>
@@ -515,7 +537,7 @@ function CodeCarousel() {
             size="icon"
             onClick={nextSlide}
             className="w-8 h-8 bg-white/20 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-white/30 dark:hover:bg-gray-700/50 transition-all duration-300"
-            aria-label="Next slide"
+            aria-label="Next development service example"
           >
             <ChevronRight className="w-4 h-4" />
           </Button>
@@ -530,7 +552,7 @@ function CodeCarousel() {
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === currentSlide ? "bg-blue-500 w-6" : "bg-gray-400 dark:bg-gray-600"
               }`}
-              aria-label={`Go to slide ${index + 1}`}
+              aria-label={`Go to ${codeExamples[index].title} example`}
             />
           ))}
         </div>
@@ -553,8 +575,8 @@ function TestimonialsSlider() {
         "Ishant did two separate Shopify related projects for me, both of which he executed perfectly. His work was timely, professional and communication was solid. I plan on hiring him again. Thank you!",
       rating: 5,
       avatar: "PM",
-      project: "E-commerce Project",
-      technology: "Shopify, Liquid",
+      project: "Shopify E-commerce Store",
+      technology: "Shopify Theme Customization",
       techColor: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
       result: "100% client satisfaction",
       gradientFrom: "from-blue-500",
@@ -570,10 +592,10 @@ function TestimonialsSlider() {
         "I would highly recommend working with Ishant. He's been incredibly fast and efficient with my requests. The quality of work exceeded my expectations and the turnaround time was impressive.",
       rating: 5,
       avatar: "MA",
-      project: "Shopify Store",
-      technology: "Shopify",
+      project: "Custom Shopify Development",
+      technology: "Shopify Liquid & JavaScript",
       techColor: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-      result: "Theme Customization Success",
+      result: "Exceeded expectations",
       gradientFrom: "from-green-500",
       gradientTo: "to-emerald-500",
       bgGradient: "from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20",
@@ -587,10 +609,10 @@ function TestimonialsSlider() {
         "Working with Ishant on our Shopify store has been an absolute pleasure! He is highly skilled, professional, and delivered exactly what we needed. From designing a user-friendly layout to optimizing the store for conversions, his expertise in Shopify is impressive. Communication was smooth, deadlines were met, and he even provided valuable suggestions to improve our store. Highly recommended for anyone looking for a top-notch Shopify developer!",
       rating: 5,
       avatar: "AN",
-      project: "Corporate Website",
-      technology: "Shopify",
+      project: "Shopify Store Optimization",
+      technology: "Shopify Performance & SEO",
       techColor: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
-      result: "Theme Customization",
+      result: "Conversion optimization success",
       gradientFrom: "from-purple-500",
       gradientTo: "to-indigo-500",
       bgGradient: "from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20",
@@ -604,10 +626,10 @@ function TestimonialsSlider() {
         "⭐⭐⭐⭐⭐ Outstanding Shopify Expert – Highly Recommended! Ishant Gupta was an absolute pleasure to work with on my Shopify project. He understood my requirements perfectly and delivered a high-quality, customized Shopify store that exceeded my expectations. Their expertise in theme development, customization, and optimization was evident throughout the project",
       rating: 5,
       avatar: "MT",
-      project: "Shopify Website",
-      technology: "Shopify",
+      project: "Custom Shopify Theme",
+      technology: "Shopify Theme Development",
       techColor: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
-      result: "100% client expectations",
+      result: "Outstanding Shopify expert",
       gradientFrom: "from-orange-500",
       gradientTo: "to-red-500",
       bgGradient: "from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20",
@@ -830,75 +852,75 @@ function FAQSection() {
   const faqs = [
     {
       id: 1,
-      question: "How long does it take to build a website?",
+      question: "What Shopify development services do you offer?",
       answer:
-        "The timeline depends on the complexity of your project. A simple website typically takes 1-2 weeks, while complex e-commerce or custom applications can take 4-8 weeks. We'll provide you with a detailed timeline during our initial consultation.",
+        "We offer comprehensive Shopify services including custom theme development, theme customization, Shopify store setup, app integration, performance optimization, bug fixes, and ongoing maintenance. We specialize in Liquid templating, custom functionality, and e-commerce optimization.",
     },
     {
       id: 2,
-      question: "What's included in your web development service?",
+      question: "Can you fix my existing Shopify theme issues?",
       answer:
-        "Our comprehensive service includes custom design, responsive development, SEO optimization, performance optimization, security implementation, content management system setup, and 30 days of free support after launch. We also provide training on how to manage your website.",
+        "Yes! We specialize in fixing Shopify theme issues, bugs, and customization problems. Whether it's layout issues, functionality problems, mobile responsiveness, or performance issues, our Shopify experts can diagnose and resolve any theme-related problems quickly.",
     },
     {
       id: 3,
-      question: "Do you provide ongoing maintenance and support?",
+      question: "Do you develop custom WordPress websites?",
       answer:
-        "Yes! We offer various maintenance packages including security updates, content updates, performance monitoring, backup services, and technical support. We also provide emergency support for critical issues.",
+        "We create custom WordPress websites, themes, plugins, and provide WordPress maintenance services. We also work with WooCommerce for e-commerce solutions, custom post types, and advanced functionality tailored to your business needs.",
     },
     {
       id: 4,
-      question: "Can you help with e-commerce websites?",
+      question: "What PHP frameworks and technologies do you work with?",
       answer:
-        "We specialize in e-commerce development using platforms like Shopify, WooCommerce, and custom solutions. We can build everything from simple online stores to complex multi-vendor marketplaces with payment integration, inventory management, and more.",
+        "We work with various PHP frameworks including Laravel, CodeIgniter, and custom PHP development. We build web applications, REST APIs, database-driven solutions, and integrate with third-party services. We're experienced with MySQL, PostgreSQL, and modern PHP practices.",
     },
     {
       id: 5,
-      question: "What technologies do you use?",
+      question: "How long does it take to complete a web development project?",
       answer:
-        "We use modern technologies including React, Next.js, Node.js, PHP, WordPress, Shopify, and various databases. We choose the best technology stack based on your specific requirements, budget, and long-term goals.",
+        "Project timelines vary based on complexity. Simple Shopify theme customizations take 1-3 days, custom themes take 1-2 weeks, WordPress sites take 1-3 weeks, and complex PHP applications take 2-8 weeks. We provide detailed timelines during consultation.",
     },
     {
       id: 6,
-      question: "Do you offer mobile app development?",
+      question: "Do you provide ongoing maintenance and support?",
       answer:
-        "While we primarily focus on web development, we can create progressive web apps (PWAs) that work seamlessly on mobile devices. For native mobile apps, we can recommend trusted partners or discuss hybrid solutions.",
+        "Yes! We offer comprehensive maintenance packages including security updates, content updates, performance monitoring, backup services, bug fixes, and technical support. We also provide emergency support for critical issues and regular health checks.",
     },
     {
       id: 7,
-      question: "How much does a website cost?",
+      question: "Can you help migrate my website to a new platform?",
       answer:
-        "Costs vary based on complexity, features, and requirements. Simple websites start from $500, while complex e-commerce or custom applications can range from $2,000-$10,000+. We provide detailed quotes after understanding your specific needs.",
+        "Definitely! We handle website migrations including Shopify to Shopify Plus, WordPress migrations, platform switches, and data transfers. We ensure zero downtime, preserve SEO rankings, and maintain all functionality during the migration process.",
     },
     {
       id: 8,
-      question: "Will my website be mobile-friendly?",
+      question: "What makes your Shopify development services different?",
       answer:
-        "Yes, absolutely! All our websites are built with a mobile-first approach and are fully responsive. They'll look and work perfectly on all devices - smartphones, tablets, and desktops. We also test across different browsers and devices.",
+        "We're Shopify experts with 100+ successful projects, 4.9★ rating, and deep knowledge of Liquid templating, Shopify APIs, and e-commerce best practices. We focus on performance, conversion optimization, and creating stores that drive sales and provide excellent user experience.",
     },
     {
       id: 9,
-      question: "Can you help improve my existing website?",
+      question: "Do you offer SEO optimization for websites?",
       answer:
-        "Definitely! We offer website redesign, performance optimization, security improvements, feature additions, and technical fixes. Our free technical audit can identify areas for improvement in your current website.",
+        "Yes! We include SEO optimization in all our projects - proper HTML structure, meta tags, site speed optimization, mobile responsiveness, and schema markup. For advanced SEO strategies and ongoing optimization, we offer specialized SEO packages.",
     },
     {
       id: 10,
-      question: "Do you provide SEO services?",
+      question: "How much do your web development services cost?",
       answer:
-        "Yes, we include basic SEO optimization in all our projects - proper HTML structure, meta tags, site speed optimization, and mobile responsiveness. For advanced SEO strategies and ongoing optimization, we can discuss additional SEO packages.",
+        "Costs vary based on project complexity and requirements. Shopify customizations start from $200, custom themes from $800, WordPress sites from $500, and PHP applications from $1,000. We provide detailed quotes after understanding your specific needs and requirements.",
     },
     {
       id: 11,
-      question: "What if I need changes after the website is live?",
+      question: "Do you work with international clients?",
       answer:
-        "We provide 30 days of free minor changes and bug fixes after launch. For major changes or new features, we offer competitive rates and quick turnaround times. We're always here to help your website evolve with your business.",
+        "Yes! We work with clients worldwide and have experience with international e-commerce requirements, multiple currencies, languages, and time zones. We maintain clear communication and provide support across different time zones.",
     },
     {
       id: 12,
-      question: "How do we communicate during the project?",
+      question: "What if I need changes after the project is completed?",
       answer:
-        "We maintain regular communication through email, scheduled calls, and project management tools. You'll receive regular updates, previews of work in progress, and have direct access to our team throughout the development process.",
+        "We provide 30 days of free minor changes and bug fixes after project completion. For major changes or new features, we offer competitive rates and quick turnaround times. We're always available to help your website evolve with your business needs.",
     },
   ]
 
@@ -1209,19 +1231,19 @@ export default function Portfolio() {
                 <div id="hero-content" className="transform transition-all duration-1000 ease-out">
                   <div id="hero-badge" className="mb-6">
                     <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full animate-pulse">
-                      🚀 Professional Web Development & Digital Solutions
+                      🏆 Expert Shopify Developer & Web Development Services
                     </Badge>
                   </div>
 
                   <h1 id="hero-title" className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                    <span className="text-gray-900 dark:text-white animate-fade-in-up">We Design.</span>
+                    <span className="text-gray-900 dark:text-white animate-fade-in-up">Shopify Expert.</span>
                     <br />
                     <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-fade-in-up animation-delay-200">
-                      We Develop.
+                      WordPress Pro.
                     </span>
                     <br />
                     <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent animate-fade-in-up animation-delay-400">
-                      You Win!
+                      PHP Developer!
                     </span>
                   </h1>
 
@@ -1229,8 +1251,9 @@ export default function Portfolio() {
                     id="hero-description"
                     className="text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed animate-fade-in-up animation-delay-600"
                   >
-                    We transform your ideas into powerful web solutions that drive growth, engage users, and deliver
-                    exceptional results for your business with Cridtick's expertise.
+                    🚀 Top-rated Shopify developer with 200+ successful projects. Custom Shopify themes, WordPress
+                    websites, PHP applications, and e-commerce solutions. 4.9★ rating on Upwork. Get professional web
+                    development services that drive results!
                   </p>
 
                   <div
@@ -1243,7 +1266,7 @@ export default function Portfolio() {
                       className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 transform hover:scale-105 transition-all duration-300"
                       onClick={handleContactButtonClick}
                     >
-                      Start Your Project
+                      Start Your Shopify Project
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                     <Button
@@ -1269,8 +1292,8 @@ export default function Portfolio() {
                       <div className="text-sm text-gray-600 dark:text-gray-400">Clients</div>
                     </div>
                     <div className="text-center transform hover:scale-110 transition-all duration-300">
-                      <div className="text-3xl font-bold text-green-600 animate-counter">99%</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">Satisfaction</div>
+                      <div className="text-3xl font-bold text-green-600 animate-counter">4.9★</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Rating</div>
                     </div>
                   </div>
                 </div>
@@ -1308,15 +1331,15 @@ export default function Portfolio() {
                 </div>
 
                 <h2 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent">
-                  Services That
+                  Expert Shopify & Web
                   <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient-text">
-                    Transform Ideas
+                    Development Services
                   </span>
                 </h2>
 
                 <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                  From cutting-edge e-commerce platforms to custom web applications, we deliver solutions that drive
-                  growth and exceed expectations
+                  From custom Shopify themes to WordPress sites and PHP applications - we deliver professional web
+                  development solutions that drive growth and exceed expectations
                 </p>
               </div>
 
@@ -1332,28 +1355,38 @@ export default function Portfolio() {
                         <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                           <Globe className="w-8 h-8 text-white" />
                         </div>
-                        <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">Most Popular</Badge>
+                        <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                          🏆 Most Popular
+                        </Badge>
                       </div>
 
-                      <h3 className="text-3xl font-bold text-white mb-4">Shopify Development</h3>
+                      <h3 className="text-3xl font-bold text-white mb-4">Shopify Development Expert</h3>
                       <p className="text-green-100 text-lg mb-6 leading-relaxed">
-                        Custom Shopify stores with advanced features, theme development, app integrations, and
-                        conversion optimization that drive sales and enhance user experience.
+                        🚀 Professional Shopify developer with 100+ successful stores. Custom theme development, Shopify
+                        theme customization, bug fixes, app integrations, and performance optimization. Top-rated on
+                        Upwork with 4.9★ rating!
                       </p>
 
                       <div className="grid grid-cols-2 gap-4 mb-6">
                         <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                           <div className="text-2xl font-bold text-white">100+</div>
-                          <div className="text-green-200 text-sm">Stores Built</div>
+                          <div className="text-green-200 text-sm">Shopify Stores</div>
                         </div>
                         <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                           <div className="text-2xl font-bold text-white">4.9★</div>
-                          <div className="text-green-200 text-sm">Client Rating</div>
+                          <div className="text-green-200 text-sm">Upwork Rating</div>
                         </div>
                       </div>
 
                       <div className="flex flex-wrap gap-2 mb-6">
-                        {["Theme Customization","Liquid", "Shopify Plus", "Custom Apps","Shopify Fix"].map((tech) => (
+                        {[
+                          "Shopify Theme Customization",
+                          "Liquid Templating",
+                          "Shopify Plus",
+                          "Custom Apps",
+                          "Bug Fixes",
+                          "Performance Optimization",
+                        ].map((tech) => (
                           <Badge key={tech} className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
                             {tech}
                           </Badge>
@@ -1371,28 +1404,29 @@ export default function Portfolio() {
                   </Card>
                 </div>
 
-                {/* Secondary Service - React */}
+                {/* Secondary Service - WordPress */}
                 <div className="group">
                   <Card className="h-full bg-gradient-to-br from-blue-500 to-cyan-600 border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
                     <div className="absolute top-4 right-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
                     <CardContent className="p-6 relative z-10">
                       <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                        <Code2 className="w-7 h-7 text-white" />
+                        <Globe className="w-7 h-7 text-white" />
                       </div>
 
-                      <h3 className="text-2xl font-bold text-white mb-3">React Development</h3>
+                      <h3 className="text-2xl font-bold text-white mb-3">WordPress Development</h3>
                       <p className="text-blue-100 mb-4 leading-relaxed">
-                        Modern React applications with Next.js, TypeScript, and cutting-edge UI/UX design.
+                        Custom WordPress websites, themes, plugins, and WooCommerce e-commerce solutions with SEO
+                        optimization.
                       </p>
 
                       <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 mb-4">
-                        <div className="text-xl font-bold text-white">40+</div>
-                        <div className="text-blue-200 text-sm">Apps Built</div>
+                        <div className="text-xl font-bold text-white">80+</div>
+                        <div className="text-blue-200 text-sm">WordPress Sites</div>
                       </div>
 
                       <div className="flex flex-wrap gap-2 mb-4">
-                        {["React 18", "Next.js", "TypeScript"].map((tech) => (
+                        {["Custom Themes", "WooCommerce", "SEO Ready"].map((tech) => (
                           <Badge key={tech} className="bg-white/20 text-white border-white/30 backdrop-blur-sm text-xs">
                             {tech}
                           </Badge>
@@ -1403,7 +1437,7 @@ export default function Portfolio() {
                         className="w-full bg-white text-blue-600 hover:bg-blue-50 font-semibold group-hover:scale-105 transition-all duration-300"
                         onClick={handleContactButtonClick}
                       >
-                        Get Quote
+                        Get WordPress Quote
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
                     </CardContent>
@@ -1416,35 +1450,35 @@ export default function Portfolio() {
                 {[
                   {
                     icon: <Server className="w-6 h-6" />,
-                    title: "Node.js Backend",
-                    description: "Scalable server-side applications with Express.js and database integration",
-                    gradient: "from-green-600 to-teal-600",
-                    projects: "35+",
-                    technologies: ["Node.js", "Express", "MongoDB"],
+                    title: "PHP Development",
+                    description: "Custom PHP applications, Laravel framework, and database-driven solutions",
+                    gradient: "from-purple-500 to-indigo-600",
+                    projects: "60+",
+                    technologies: ["PHP 8+", "Laravel", "MySQL"],
+                  },
+                  {
+                    icon: <Code2 className="w-6 h-6" />,
+                    title: "React Development",
+                    description: "Modern React applications with Next.js, TypeScript, and responsive design",
+                    gradient: "from-blue-600 to-cyan-600",
+                    projects: "40+",
+                    technologies: ["React 18", "Next.js", "TypeScript"],
                   },
                   {
                     icon: <Database className="w-6 h-6" />,
                     title: "API Development",
-                    description: "RESTful APIs, GraphQL, and microservices architecture",
-                    gradient: "from-purple-500 to-indigo-600",
+                    description: "RESTful APIs, GraphQL endpoints, and third-party integrations",
+                    gradient: "from-green-500 to-teal-600",
                     projects: "45+",
-                    technologies: ["REST", "GraphQL", "JWT"],
+                    technologies: ["REST API", "GraphQL", "JWT"],
                   },
                   {
                     icon: <Layers className="w-6 h-6" />,
-                    title: "PHP Development",
-                    description: "Custom PHP applications and Laravel framework solutions",
-                    gradient: "from-indigo-500 to-purple-600",
-                    projects: "30+",
-                    technologies: ["PHP 8+", "Laravel", "MySQL"],
-                  },
-                  {
-                    icon: <Globe className="w-6 h-6" />,
-                    title: "WordPress",
-                    description: "Custom themes, plugins, and WooCommerce development",
-                    gradient: "from-blue-600 to-indigo-600",
-                    projects: "60+",
-                    technologies: ["Themes", "Plugins", "WooCommerce"],
+                    title: "E-commerce Solutions",
+                    description: "Complete online stores with payment gateways and inventory management",
+                    gradient: "from-orange-500 to-red-600",
+                    projects: "120+",
+                    technologies: ["Shopify", "WooCommerce", "Payments"],
                   },
                 ].map((service, index) => (
                   <Card
@@ -1527,27 +1561,27 @@ export default function Portfolio() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                       {[
                         {
-                          icon: <Code2 className="w-8 h-8" />,
-                          title: "Frontend",
-                          description: "React, Next.js, TypeScript, Tailwind CSS",
-                          color: "from-cyan-400 to-blue-500",
-                        },
-                        {
-                          icon: <Server className="w-8 h-8" />,
-                          title: "Backend",
-                          description: "Node.js, PHP, Laravel, Express.js, RESTful APIs",
+                          icon: <Globe className="w-8 h-8" />,
+                          title: "Shopify Expert",
+                          description: "Liquid, Theme Development, Apps, Shopify Plus",
                           color: "from-green-400 to-emerald-500",
                         },
                         {
                           icon: <Globe className="w-8 h-8" />,
-                          title: "Platforms",
-                          description: "Shopify, WordPress, WooCommerce, Custom CMS",
-                          color: "from-purple-400 to-pink-500",
+                          title: "WordPress Pro",
+                          description: "Custom Themes, Plugins, WooCommerce, SEO",
+                          color: "from-blue-400 to-cyan-500",
                         },
                         {
-                          icon: <Database className="w-8 h-8" />,
-                          title: "Database",
-                          description: "MySQL, PostgreSQL, MongoDB, Firebase",
+                          icon: <Server className="w-8 h-8" />,
+                          title: "PHP Developer",
+                          description: "Laravel, Custom PHP, MySQL, APIs",
+                          color: "from-purple-400 to-indigo-500",
+                        },
+                        {
+                          icon: <Code2 className="w-8 h-8" />,
+                          title: "Frontend",
+                          description: "React, Next.js, TypeScript, Tailwind CSS",
                           color: "from-orange-400 to-red-500",
                         },
                       ].map((category, index) => (
@@ -1568,8 +1602,8 @@ export default function Portfolio() {
                       {[
                         { number: "200+", label: "Total Projects", icon: <Rocket className="w-6 h-6" /> },
                         { number: "15+", label: "Technologies", icon: <Layers className="w-6 h-6" /> },
-                        { number: "98%", label: "Success Rate", icon: <TrendingUp className="w-6 h-6" /> },
-                        { number: "4.9/5", label: "Avg Rating", icon: <Heart className="w-6 h-6" /> },
+                        { number: "4.9★", label: "Upwork Rating", icon: <Star className="w-6 h-6" /> },
+                        { number: "100%", label: "Success Rate", icon: <Heart className="w-6 h-6" /> },
                       ].map((stat, index) => (
                         <div key={index} className="group">
                           <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300">
@@ -1620,11 +1654,12 @@ export default function Portfolio() {
             <div id="testimonials-container" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div id="testimonials-header" className="text-center mb-16">
                 <Badge className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 mb-4">
-                  Client Success Stories
+                  ⭐ Client Success Stories
                 </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">Real Results, Real Impact</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">Real Shopify & Web Development Results</h2>
                 <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                  See how we've helped businesses like yours achieve remarkable growth and success.
+                  See how we've helped businesses achieve remarkable growth with expert Shopify development, WordPress
+                  sites, and custom web solutions.
                 </p>
               </div>
 
@@ -1639,10 +1674,10 @@ export default function Portfolio() {
                 <Badge className="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 mb-4">
                   🔧 Free Technical Audit
                 </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">Is Your Website Broken or Outdated?</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">Is Your Shopify Store or Website Broken?</h2>
                 <p className="text-xl text-gray-600 dark:text-gray-300">
-                  Get a comprehensive technical analysis of your website's issues, bugs, and customization opportunities
-                  - absolutely free!
+                  Get a comprehensive technical analysis of your Shopify store, WordPress site, or any website's issues,
+                  bugs, and customization opportunities - absolutely free!
                 </p>
               </div>
 
@@ -1657,7 +1692,7 @@ export default function Portfolio() {
                         <Input
                           type="url"
                           name="websiteUrl"
-                          placeholder="https://yourwebsite.com"
+                          placeholder="https://yourshopifystore.com"
                           className="h-12"
                           required
                         />
@@ -1684,12 +1719,14 @@ export default function Portfolio() {
                           required
                         >
                           <option value="">What's your main concern?</option>
+                          <option value="shopify-theme-broken">Shopify Theme Not Working</option>
                           <option value="website-broken">Website Not Working Properly</option>
                           <option value="slow-loading">Site Loading Too Slow</option>
                           <option value="outdated-design">Outdated Design/Layout</option>
                           <option value="mobile-issues">Mobile Compatibility Issues</option>
                           <option value="need-customization">Need Custom Features</option>
                           <option value="security-concerns">Security Concerns</option>
+                          <option value="shopify-optimization">Shopify Store Optimization</option>
                         </select>
                       </div>
                       <Button
@@ -1728,21 +1765,21 @@ export default function Portfolio() {
                   {[
                     {
                       icon: <Target className="w-6 h-6" />,
-                      title: "Broken Elements",
-                      desc: "Identify non-functional buttons, forms, links, and interactive elements",
-                      color: "from-red-500 to-pink-500",
+                      title: "Shopify Theme Issues",
+                      desc: "Identify broken Shopify theme elements, Liquid code errors, and customization problems",
+                      color: "from-green-500 to-emerald-500",
                     },
                     {
                       icon: <Zap className="w-6 h-6" />,
                       title: "Performance Issues",
-                      desc: "Find what's making your website slow and how to fix it",
+                      desc: "Find what's making your Shopify store or website slow and how to fix it",
                       color: "from-yellow-500 to-orange-500",
                     },
                     {
                       icon: <Shield className="w-6 h-6" />,
                       title: "Security Vulnerabilities",
                       desc: "Discover outdated plugins, themes, and potential security risks",
-                      color: "from-green-500 to-emerald-500",
+                      color: "from-red-500 to-pink-500",
                     },
                     {
                       icon: <Smartphone className="w-6 h-6" />,
@@ -1753,7 +1790,7 @@ export default function Portfolio() {
                     {
                       icon: <Code2 className="w-6 h-6" />,
                       title: "Customization Opportunities",
-                      desc: "Identify areas where custom features could improve functionality",
+                      desc: "Identify areas where custom features could improve functionality and conversions",
                       color: "from-purple-500 to-indigo-500",
                     },
                   ].map((item, index) => (
@@ -1777,7 +1814,7 @@ export default function Portfolio() {
                     </div>
                     <p className="text-blue-700 dark:text-blue-300 text-sm">
                       You'll receive a prioritized list of technical fixes with estimated time and complexity for each
-                      issue.
+                      issue, plus recommendations for Shopify optimization.
                     </p>
                   </div>
                 </div>
@@ -1809,7 +1846,7 @@ export default function Portfolio() {
                       <Code2 className="w-6 h-6 text-purple-600" />
                     </div>
                     <div className="text-left">
-                      <p className="font-bold">Technical Expert</p>
+                      <p className="font-bold">Shopify Expert</p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">By experienced developers</p>
                     </div>
                   </div>
@@ -1823,11 +1860,12 @@ export default function Portfolio() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
                 <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 mb-4">
-                  Trusted Worldwide
+                  🌍 Trusted Worldwide
                 </Badge>
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">Available on Multiple Platforms</h2>
                 <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                  Find us on Upwork and connect with 500+ satisfied clients across various platforms
+                  Find us on Upwork and connect with 200+ satisfied clients across various platforms for Shopify
+                  development and web services
                 </p>
               </div>
 
@@ -1843,14 +1881,15 @@ export default function Portfolio() {
                           </div>
                           <div>
                             <h3 className="text-2xl font-bold text-green-800 dark:text-green-200">
-                              Available on Upwork
+                              🏆 Top Rated on Upwork
                             </h3>
-                            <p className="text-green-600 dark:text-green-400">Top Rated Freelancer</p>
+                            <p className="text-green-600 dark:text-green-400">Shopify Expert Freelancer</p>
                           </div>
                         </div>
                         <p className="text-green-700 dark:text-green-300 mb-6">
                           We maintain a strong presence on Upwork with excellent client reviews and a proven track
-                          record of delivering quality web development projects.
+                          record of delivering quality Shopify development and web development projects with 100% job
+                          success score.
                         </p>
                         <Button
                           className="bg-green-600 hover:bg-green-700 text-white"
@@ -1868,11 +1907,11 @@ export default function Portfolio() {
                           <div className="text-sm text-green-700 dark:text-green-300">Job Success Score</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-3xl font-bold text-green-600 mb-2">50+</div>
-                          <div className="text-sm text-green-700 dark:text-green-300">Upwork Projects</div>
+                          <div className="text-3xl font-bold text-green-600 mb-2">100+</div>
+                          <div className="text-sm text-green-700 dark:text-green-300">Shopify Projects</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-3xl font-bold text-green-600 mb-2">5.0</div>
+                          <div className="text-3xl font-bold text-green-600 mb-2">4.9★</div>
                           <div className="text-sm text-green-700 dark:text-green-300">Average Rating</div>
                         </div>
                         <div className="text-center">
@@ -1896,7 +1935,7 @@ export default function Portfolio() {
                       </div>
                       <h4 className="font-bold text-lg mb-2">Upwork</h4>
                       <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                        Top Rated Freelancer with 100% Job Success Score
+                        Top Rated Shopify Developer with 100% Job Success Score and 4.9★ rating
                       </p>
                       <Button
                         variant="outline"
@@ -1915,7 +1954,7 @@ export default function Portfolio() {
                       </div>
                       <h4 className="font-bold text-lg mb-2">Direct Contact</h4>
                       <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                        Get in touch directly for custom projects
+                        Get in touch directly for custom Shopify projects and web development
                       </p>
                       <Button
                         variant="outline"
@@ -1936,7 +1975,7 @@ export default function Portfolio() {
                       </div>
                       <h4 className="font-bold text-lg mb-2">Schedule Call</h4>
                       <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                        Book a free consultation to discuss your project
+                        Book a free consultation to discuss your Shopify or web development project
                       </p>
                       <Button
                         variant="outline"
@@ -1957,11 +1996,12 @@ export default function Portfolio() {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
                 <Badge className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 mb-4">
-                  Frequently Asked Questions
+                  ❓ Frequently Asked Questions
                 </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">Got Questions? We've Got Answers</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">Shopify & Web Development Questions Answered</h2>
                 <p className="text-xl text-gray-600 dark:text-gray-300">
-                  Everything you need to know about our web development services
+                  Everything you need to know about our Shopify development, WordPress, PHP, and web development
+                  services
                 </p>
               </div>
 
@@ -1974,11 +2014,12 @@ export default function Portfolio() {
             <div id="contact-container" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div id="contact-header" className="text-center mb-16">
                 <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 mb-4">
-                  Get In Touch
+                  📞 Get In Touch
                 </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Start Building</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
                 <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                  Ready to bring your vision to life? Contact us today and let's create something amazing together.
+                  Contact our Shopify experts and web development team today. Let's create something amazing together
+                  with professional development services.
                 </p>
               </div>
 
@@ -1999,8 +2040,8 @@ export default function Portfolio() {
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold">Call Us</p>
-                      <p className="text-gray-600 dark:text-gray-300">+91 7018512123 (Available in Whatsapp)</p>
+                      <p className="font-semibold">WhatsApp</p>
+                      <p className="text-gray-600 dark:text-gray-300">+91 7018512123 (Available on WhatsApp)</p>
                     </div>
                   </div>
                   <div id="contact-location" className="flex items-center space-x-4">
@@ -2021,7 +2062,7 @@ export default function Portfolio() {
                         variant="outline"
                         size="icon"
                         className="hover:bg-blue-600 hover:text-white hover:border-blue-600 bg-transparent"
-                        onClick={() => window.open("https://github.com/your-github", "_blank")}
+                        onClick={() => window.open("https://github.com/cridtick", "_blank")}
                         aria-label="Visit our GitHub"
                       >
                         <Github className="w-5 h-5" />
@@ -2031,7 +2072,7 @@ export default function Portfolio() {
                         variant="outline"
                         size="icon"
                         className="hover:bg-blue-600 hover:text-white hover:border-blue-600 bg-transparent"
-                        onClick={() => window.open("https://linkedin.com/in/your-linkedin", "_blank")}
+                        onClick={() => window.open("https://linkedin.com/company/cridtick", "_blank")}
                         aria-label="Visit our LinkedIn"
                       >
                         <Linkedin className="w-5 h-5" />
@@ -2041,7 +2082,7 @@ export default function Portfolio() {
                         variant="outline"
                         size="icon"
                         className="hover:bg-blue-600 hover:text-white hover:border-blue-600 bg-transparent"
-                        onClick={() => window.open("https://twitter.com/your-twitter", "_blank")}
+                        onClick={() => window.open("https://twitter.com/cridtick", "_blank")}
                         aria-label="Visit our Twitter"
                       >
                         <Twitter className="w-5 h-5" />
@@ -2098,9 +2139,13 @@ export default function Portfolio() {
                           required
                         >
                           <option value="">Select a project type</option>
+                          <option value="Shopify Theme Development">Shopify Theme Development</option>
+                          <option value="Shopify Theme Customization">Shopify Theme Customization</option>
+                          <option value="Shopify Store Setup">Shopify Store Setup</option>
+                          <option value="WordPress Development">WordPress Development</option>
+                          <option value="PHP Development">PHP Development</option>
                           <option value="E-commerce Development">E-commerce Development</option>
-                          <option value="Web Application">Web Application</option>
-                          <option value="WordPress Site">WordPress Site</option>
+                          <option value="Website Bug Fixes">Website Bug Fixes</option>
                           <option value="Custom Development">Custom Development</option>
                           <option value="Other">Other</option>
                         </select>
@@ -2112,7 +2157,7 @@ export default function Portfolio() {
                         <Textarea
                           id="message"
                           name="message"
-                          placeholder="Tell us about your project requirements..."
+                          placeholder="Tell us about your Shopify store, website requirements, or development needs..."
                           rows={4}
                           required
                         />
@@ -2156,15 +2201,16 @@ export default function Portfolio() {
                   <span className="text-2xl font-bold">Cridtick</span>
                 </div>
                 <p className="text-gray-400 mb-4 max-w-md">
-                  Cridtick is a professional web development company dedicated to creating exceptional digital
-                  experiences that drive business growth.
+                  Cridtick is a professional Shopify developer and web development company specializing in custom
+                  Shopify themes, WordPress development, PHP applications, and e-commerce solutions that drive business
+                  growth.
                 </p>
                 <div id="footer-social" className="flex space-x-4">
                   <Button
                     variant="ghost"
                     size="icon"
                     className="text-gray-400 hover:text-white"
-                    onClick={() => window.open("https://github.com/your-github", "_blank")}
+                    onClick={() => window.open("https://github.com/cridtick", "_blank")}
                     aria-label="Visit our GitHub"
                   >
                     <Github className="w-5 h-5" />
@@ -2173,7 +2219,7 @@ export default function Portfolio() {
                     variant="ghost"
                     size="icon"
                     className="text-gray-400 hover:text-white"
-                    onClick={() => window.open("https://linkedin.com/in/your-linkedin", "_blank")}
+                    onClick={() => window.open("https://linkedin.com/company/cridtick", "_blank")}
                     aria-label="Visit our LinkedIn"
                   >
                     <Linkedin className="w-5 h-5" />
@@ -2182,7 +2228,7 @@ export default function Portfolio() {
                     variant="ghost"
                     size="icon"
                     className="text-gray-400 hover:text-white"
-                    onClick={() => window.open("https://twitter.com/your-twitter", "_blank")}
+                    onClick={() => window.open("https://twitter.com/cridtick", "_blank")}
                     aria-label="Visit our Twitter"
                   >
                     <Twitter className="w-5 h-5" />
@@ -2198,23 +2244,23 @@ export default function Portfolio() {
                     </a>
                   </li>
                   <li>
-                    <a href="#testimonials-section" className="hover:text-white transition-colors">
-                      E-commerce Development
+                    <a href="#services-section" className="hover:text-white transition-colors">
+                      Shopify Development
                     </a>
                   </li>
                   <li>
-                    <a href="#testimonials-section" className="hover:text-white transition-colors">
-                      Web Applications
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#testimonials-section" className="hover:text-white transition-colors">
+                    <a href="#services-section" className="hover:text-white transition-colors">
                       WordPress Development
                     </a>
                   </li>
                   <li>
-                    <a href="#testimonials-section" className="hover:text-white transition-colors">
-                      Custom Solutions
+                    <a href="#services-section" className="hover:text-white transition-colors">
+                      PHP Development
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services-section" className="hover:text-white transition-colors">
+                      E-commerce Solutions
                     </a>
                   </li>
                 </ul>
