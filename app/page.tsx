@@ -43,7 +43,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { FloatingContactButton, type FloatingContactButtonRef } from "@/components/floating-contact-button"
 import { Notification } from "@/components/notification"
-import { sendContactEmail } from "./actions"
+import { sendContactEmail, sendAuditRequest } from "./actions"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
@@ -1041,35 +1041,6 @@ export default function Portfolio() {
     setFormState((prev) => ({ ...prev, showNotification: false }))
   }
 
-  const handleFormSubmit = async (formData: FormData) => {
-    setFormState({ success: false, message: "", loading: true, showNotification: false })
-
-    try {
-      const result = await sendContactEmail(formData)
-
-      setFormState({
-        success: result.success,
-        message: result.message,
-        loading: false,
-        showNotification: true,
-      })
-
-      // Reset form if successful
-      if (result.success) {
-        const form = document.getElementById("contact-form") as HTMLFormElement
-        form?.reset()
-      }
-    } catch (error) {
-      console.error("Form submission error:", error)
-      setFormState({
-        success: false,
-        message: "An unexpected error occurred. Please try again.",
-        loading: false,
-        showNotification: true,
-      })
-    }
-  }
-
   // Navigation items - Updated to match actual sections
   const navigationItems = [
     { name: "Home", href: "#home-section" },
@@ -1686,7 +1657,38 @@ export default function Portfolio() {
                 <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-2xl">
                   <CardContent className="p-8">
                     <h3 className="text-2xl font-bold mb-6 text-center">Get Your Free Technical Report</h3>
-                    <form className="space-y-6" action={handleFormSubmit}>
+                    <form
+                      id="audit-form"
+                      className="space-y-6"
+                      action={async (formData) => {
+                        setFormState({ success: false, message: "", loading: true, showNotification: false })
+
+                        try {
+                          const result = await sendAuditRequest(formData)
+
+                          setFormState({
+                            success: result.success,
+                            message: result.message,
+                            loading: false,
+                            showNotification: true,
+                          })
+
+                          // Reset form if successful
+                          if (result.success) {
+                            const form = document.getElementById("audit-form") as HTMLFormElement
+                            form?.reset()
+                          }
+                        } catch (error) {
+                          console.error("Audit form submission error:", error)
+                          setFormState({
+                            success: false,
+                            message: "An unexpected error occurred. Please try again.",
+                            loading: false,
+                            showNotification: true,
+                          })
+                        }
+                      }}
+                    >
                       <div>
                         <label className="block text-sm font-medium mb-2">Your Website URL</label>
                         <Input
@@ -2094,7 +2096,38 @@ export default function Portfolio() {
                 {/* Contact Form */}
                 <Card id="contact-form-card" className="shadow-xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm">
                   <CardContent className="p-8">
-                    <form id="contact-form" action={handleFormSubmit} className="space-y-6">
+                    <form
+                      id="contact-form"
+                      action={async (formData) => {
+                        setFormState({ success: false, message: "", loading: true, showNotification: false })
+
+                        try {
+                          const result = await sendContactEmail(formData)
+
+                          setFormState({
+                            success: result.success,
+                            message: result.message,
+                            loading: false,
+                            showNotification: true,
+                          })
+
+                          // Reset form if successful
+                          if (result.success) {
+                            const form = document.getElementById("contact-form") as HTMLFormElement
+                            form?.reset()
+                          }
+                        } catch (error) {
+                          console.error("Form submission error:", error)
+                          setFormState({
+                            success: false,
+                            message: "An unexpected error occurred. Please try again.",
+                            loading: false,
+                            showNotification: true,
+                          })
+                        }
+                      }}
+                      className="space-y-6"
+                    >
                       <div id="name-fields" className="grid md:grid-cols-2 gap-4">
                         <div id="first-name-field">
                           <label htmlFor="firstName" className="block text-sm font-medium mb-2">

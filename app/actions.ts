@@ -30,12 +30,13 @@ export async function sendContactEmail(formData: FormData) {
   }
 
   try {
-    console.log("Attempting to send email with Resend...")
+    console.log("Attempting to send contact email with Resend...")
+    console.log("Form data:", { firstName, lastName, email, company, projectType, message })
 
-    // Send email using Resend with spam-friendly settings
+    // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: "Cridtick <onboarding@resend.dev>",
-      to: ["contact@cridtick.com"],
+      from: "Cridtick <contact@cridtick.com>",
+      to: "contact@cridtick.com",
       reply_to: email,
       subject: `New Contact Form Submission from ${firstName} ${lastName} - Cridtick`,
       html: `
@@ -138,13 +139,13 @@ You can reply directly to this email to respond to ${firstName}.
       }
     }
 
-    console.log("Email sent successfully:", data)
+    console.log("Contact email sent successfully:", data)
 
-    // Send confirmation email to the user with simplified design
+    // Send confirmation email to the user
     try {
       const confirmationResult = await resend.emails.send({
-        from: "Cridtick <onboarding@resend.dev>",
-        to: [email],
+        from: "Cridtick <contact@cridtick.com>",
+        to: email,
         subject: "Thank you for contacting Cridtick",
         html: `
           <!DOCTYPE html>
@@ -248,7 +249,7 @@ Contact: contact@cridtick.com | Website: cridtick.com
         "Thank you for your message! We'll get back to you within 24 hours. Please check your email for confirmation.",
     }
   } catch (error) {
-    console.error("Unexpected error sending email:", error)
+    console.error("Unexpected error sending contact email:", error)
     return {
       success: false,
       message: `Sorry, there was an unexpected error: ${error instanceof Error ? error.message : "Unknown error"}. Please try again or contact us directly at contact@cridtick.com.`,
@@ -279,9 +280,14 @@ export async function sendAuditRequest(formData: FormData) {
     }
   }
 
-  // Validate URL format
+  // Validate and normalize URL format
+  let normalizedUrl = websiteUrl.trim()
+  if (!normalizedUrl.startsWith("http://") && !normalizedUrl.startsWith("https://")) {
+    normalizedUrl = `https://${normalizedUrl}`
+  }
+
   try {
-    new URL(websiteUrl)
+    new URL(normalizedUrl)
   } catch {
     return {
       success: false,
@@ -291,11 +297,12 @@ export async function sendAuditRequest(formData: FormData) {
 
   try {
     console.log("Attempting to send audit request email...")
+    console.log("Audit data:", { auditName, auditEmail, websiteUrl: normalizedUrl, mainIssue })
 
     // Send audit request email
     const { data, error } = await resend.emails.send({
-      from: "Cridtick <onboarding@resend.dev>",
-      to: ["contact@cridtick.com"],
+      from: "Cridtick <contact@cridtick.com>",
+      to: "contact@cridtick.com",
       reply_to: auditEmail,
       subject: `Free Technical Audit Request from ${auditName} - Cridtick`,
       html: `
@@ -317,7 +324,7 @@ export async function sendAuditRequest(formData: FormData) {
             
             <div style="margin-bottom: 15px; padding: 10px; background: #fef2f2; border-radius: 4px; border-left: 4px solid #dc2626;">
               <strong style="color: #374151;">Website to Audit:</strong><br>
-              <a href="${websiteUrl}" style="color: #dc2626; text-decoration: none; font-weight: bold;">${websiteUrl}</a>
+              <a href="${normalizedUrl}" style="color: #dc2626; text-decoration: none; font-weight: bold;">${normalizedUrl}</a>
             </div>
             
             <div style="margin-bottom: 15px; padding: 10px; background: #f9fafb; border-radius: 4px;">
@@ -332,7 +339,7 @@ export async function sendAuditRequest(formData: FormData) {
             
             <div style="margin-bottom: 15px; padding: 10px; background: #fef2f2; border-radius: 4px; border-left: 4px solid #dc2626;">
               <strong style="color: #374151;">Main Technical Issue:</strong><br>
-              <span style="color: #6b7280; font-weight: bold;">${mainIssue.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}</span>
+              <span style="color: #6b7280; font-weight: bold;">${mainIssue.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())}</span>
             </div>
 
             <div style="background: #f0f9ff; padding: 15px; border-radius: 6px; margin: 20px 0; border-left: 4px solid #3b82f6;">
@@ -346,7 +353,7 @@ export async function sendAuditRequest(formData: FormData) {
             </div>
 
             <div style="text-align: center; margin: 20px 0;">
-              <a href="mailto:${auditEmail}?subject=Your Free Technical Audit Report&body=Hi ${auditName},%0D%0A%0D%0AThank you for requesting a technical audit for ${websiteUrl}.%0D%0A%0D%0APlease find your detailed audit report attached.%0D%0A%0D%0ABest regards,%0D%0ACridtick Team" 
+              <a href="mailto:${auditEmail}?subject=Your Free Technical Audit Report&body=Hi ${auditName},%0D%0A%0D%0AThank you for requesting a technical audit for ${normalizedUrl}.%0D%0A%0D%0APlease find your detailed audit report attached.%0D%0A%0D%0ABest regards,%0D%0ACridtick Team" 
                  style="background: #dc2626; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block;">
                 Send Audit Report to ${auditName}
               </a>
@@ -375,10 +382,10 @@ export async function sendAuditRequest(formData: FormData) {
       text: `
 Technical Audit Request - Cridtick
 
-Website to Audit: ${websiteUrl}
+Website to Audit: ${normalizedUrl}
 Client Name: ${auditName}
 Email: ${auditEmail}
-Main Issue: ${mainIssue.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}
+Main Issue: ${mainIssue.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())}
 
 Next Steps:
 - Visit and analyze the website
@@ -404,7 +411,7 @@ Priority: Technical Audit Request - 24 Hour Delivery Promise
     // Send confirmation email to the client
     try {
       const confirmationResult = await resend.emails.send({
-        from: "Cridtick <onboarding@resend.dev>",
+        from: "Cridtick <contact@cridtick.com>",
         to: [auditEmail],
         subject: "Your Free Technical Audit Request Received - Cridtick",
         html: `
@@ -430,8 +437,8 @@ Priority: Technical Audit Request - 24 Hour Delivery Promise
               <div style="background: #fef2f2; padding: 20px; border-radius: 8px; border-left: 4px solid #dc2626; margin: 20px 0;">
                 <h3 style="margin-top: 0; color: #dc2626;">📋 Your Audit Details:</h3>
                 <ul style="margin-bottom: 0; padding-left: 20px;">
-                  <li><strong>Website:</strong> ${websiteUrl}</li>
-                  <li><strong>Main Concern:</strong> ${mainIssue.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}</li>
+                  <li><strong>Website:</strong> ${normalizedUrl}</li>
+                  <li><strong>Main Concern:</strong> ${mainIssue.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())}</li>
                   <li><strong>Contact Email:</strong> ${auditEmail}</li>
                 </ul>
               </div>
@@ -486,8 +493,8 @@ Hi ${auditName},
 Thank you for requesting a Free Technical Audit from Cridtick!
 
 Your Audit Details:
-- Website: ${websiteUrl}
-- Main Concern: ${mainIssue.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}
+- Website: ${normalizedUrl}
+- Main Concern: ${mainIssue.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())}
 - Contact Email: ${auditEmail}
 
 What Happens Next:
