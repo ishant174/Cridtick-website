@@ -2064,7 +2064,7 @@ export default function Portfolio() {
                         variant="outline"
                         size="icon"
                         className="hover:bg-blue-600 hover:text-white hover:border-blue-600 bg-transparent"
-                        onClick={() => window.open("https://github.com/cridtick", "_blank")}
+                        onClick={() => window.open("https://github.com/ishant174/Cridtick-website", "_blank")}
                         aria-label="Visit our GitHub"
                       >
                         <Github className="w-5 h-5" />
@@ -2074,7 +2074,7 @@ export default function Portfolio() {
                         variant="outline"
                         size="icon"
                         className="hover:bg-blue-600 hover:text-white hover:border-blue-600 bg-transparent"
-                        onClick={() => window.open("https://linkedin.com/company/cridtick", "_blank")}
+                        onClick={() => window.open("https://www.linkedin.com/in/ishant-gupta-3055a0227/", "_blank")}
                         aria-label="Visit our LinkedIn"
                       >
                         <Linkedin className="w-5 h-5" />
@@ -2084,7 +2084,7 @@ export default function Portfolio() {
                         variant="outline"
                         size="icon"
                         className="hover:bg-blue-600 hover:text-white hover:border-blue-600 bg-transparent"
-                        onClick={() => window.open("https://twitter.com/cridtick", "_blank")}
+                        onClick={() => window.open("https://x.com/itsishantgupta", "_blank")}
                         aria-label="Visit our Twitter"
                       >
                         <Twitter className="w-5 h-5" />
