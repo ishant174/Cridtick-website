@@ -455,14 +455,14 @@ export default function RootLayout({
         {children}
 
         {/* Google Analytics - Replace with your tracking ID */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MWHTWS5NX"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'GA_MEASUREMENT_ID');
+              gtag('config', 'G-2MWHTWS5NX');
             `,
           }}
         />
