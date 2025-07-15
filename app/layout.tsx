@@ -450,6 +450,24 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="en" href="https://cridtick.com" />
         <link rel="alternate" hrefLang="en-US" href="https://cridtick.com" />
         <link rel="alternate" hrefLang="x-default" href="https://cridtick.com" />
+     
+          <script>
+          function gtag_report_conversion(url) {
+            var callback = function () {
+              if (typeof(url) != 'undefined') {
+                window.location = url;
+              }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17335547852/WBZTCIrIiO4aEMzvncpA',
+                'value': 1.0,
+                'currency': 'INR',
+                'event_callback': callback
+            });
+            return false;
+          }
+          </script>
+
       </head>
       <body className={inter.className}>
         {children}
