@@ -473,17 +473,16 @@ export default function RootLayout({
         {children}
 
         {/* Google Analytics - Replace with your tracking ID */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MWHTWS5NX"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-2MWHTWS5NX');
-            `,
-          }}
-        />
+  
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17335547852">
+        </script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'AW-17335547852');
+        </script>
       </body>
     </html>
   )
