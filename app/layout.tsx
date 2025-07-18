@@ -183,8 +183,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-     
-       
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MWHTWS5NX"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-2MWHTWS5NX');
+            `,
+          }}
+        />
+
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -450,40 +461,30 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="en" href="https://cridtick.com" />
         <link rel="alternate" hrefLang="en-US" href="https://cridtick.com" />
         <link rel="alternate" hrefLang="x-default" href="https://cridtick.com" />
-     
-          <script>
-          function gtag_report_conversion(url) {
-            var callback = function () {
-              if (typeof(url) != 'undefined') {
-                window.location = url;
+
+        {/* Google Ads Conversion Tracking */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17335547852/WBZTCIrIiO4aEMzvncpA',
+                    'value': 1.0,
+                    'currency': 'INR',
+                    'event_callback': callback
+                });
+                return false;
               }
-            };
-            gtag('event', 'conversion', {
-                'send_to': 'AW-17335547852/WBZTCIrIiO4aEMzvncpA',
-                'value': 1.0,
-                'currency': 'INR',
-                'event_callback': callback
-            });
-            return false;
-          }
-          </script>
-
+            `,
+          }}
+        />
       </head>
-      <body className={inter.className}>
-        {children}
-
-        {/* Google Analytics - Replace with your tracking ID */}
-  
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17335547852">
-        </script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'AW-17335547852');
-        </script>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
