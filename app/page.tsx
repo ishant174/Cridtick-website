@@ -46,6 +46,7 @@ import { Notification } from "@/components/notification"
 import { sendContactEmail, sendAuditRequest } from "./actions"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import Link from "next/link"
 
 // Animated Background Component with Moving Code
 function AnimatedBackground() {
@@ -1041,13 +1042,14 @@ export default function Portfolio() {
     setFormState((prev) => ({ ...prev, showNotification: false }))
   }
 
-  // Navigation items - Updated to match actual sections
+  // Navigation items - Updated to include Blogs
   const navigationItems = [
     { name: "Home", href: "#home-section" },
     { name: "Services", href: "#services-section" },
     { name: "Testimonials", href: "#testimonials-section" },
     { name: "Free Audit", href: "#website-audit-section" },
     { name: "Platforms", href: "#social-proof-section" },
+    { name: "Blogs", href: "/blogs" },
     { name: "FAQ", href: "#faq-section" },
     { name: "Contact", href: "#contact-section" },
   ]
@@ -1113,17 +1115,24 @@ export default function Portfolio() {
                 {/* Desktop Navigation */}
                 <div id="desktop-nav" className="hidden md:flex space-x-8">
                   {navigationItems.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="hover:text-blue-600 transition-colors cursor-pointer"
-                      onClick={(e) => {
-                        e.preventDefault()
-                        document.getElementById(item.href.substring(1))?.scrollIntoView({ behavior: "smooth" })
-                      }}
-                    >
-                      {item.name}
-                    </a>
+                    <div key={item.name}>
+                      {item.href.startsWith("#") ? (
+                        <a
+                          href={item.href}
+                          className="hover:text-blue-600 transition-colors cursor-pointer"
+                          onClick={(e) => {
+                            e.preventDefault()
+                            document.getElementById(item.href.substring(1))?.scrollIntoView({ behavior: "smooth" })
+                          }}
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        <Link href={item.href} className="hover:text-blue-600 transition-colors">
+                          {item.name}
+                        </Link>
+                      )}
+                    </div>
                   ))}
                 </div>
 
@@ -1165,18 +1174,29 @@ export default function Portfolio() {
                 <div id="mobile-menu" className="md:hidden border-t py-4">
                   <div className="space-y-4">
                     {navigationItems.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="block hover:text-blue-600"
-                        onClick={(e) => {
-                          e.preventDefault()
-                          setMobileMenuOpen(false)
-                          document.getElementById(item.href.substring(1))?.scrollIntoView({ behavior: "smooth" })
-                        }}
-                      >
-                        {item.name}
-                      </a>
+                      <div key={item.name}>
+                        {item.href.startsWith("#") ? (
+                          <a
+                            href={item.href}
+                            className="block hover:text-blue-600"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              setMobileMenuOpen(false)
+                              document.getElementById(item.href.substring(1))?.scrollIntoView({ behavior: "smooth" })
+                            }}
+                          >
+                            {item.name}
+                          </a>
+                        ) : (
+                          <Link
+                            href={item.href}
+                            className="block hover:text-blue-600"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        )}
+                      </div>
                     ))}
                     <Button
                       id="mobile-cta-button"
@@ -2315,6 +2335,11 @@ export default function Portfolio() {
                     <a href="#social-proof-section" className="hover:text-white transition-colors">
                       Platforms
                     </a>
+                  </li>
+                  <li>
+                    <Link href="/blogs" className="hover:text-white transition-colors">
+                      Blogs
+                    </Link>
                   </li>
                   <li>
                     <a href="#faq-section" className="hover:text-white transition-colors">
