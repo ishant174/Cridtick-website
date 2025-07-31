@@ -16,13 +16,16 @@ export interface FloatingContactButtonRef {
 export const FloatingContactButton = forwardRef<FloatingContactButtonRef, FloatingContactButtonProps>(
   ({ onContactFormOpen }, ref) => {
     const [isOpen, setIsOpen] = useState(false)
+    const [showTooltip, setShowTooltip] = useState(true)
 
     const handleToggle = () => {
       setIsOpen(!isOpen)
+      setShowTooltip(false)
     }
 
     const openContactOptions = () => {
       setIsOpen(true)
+      setShowTooltip(false)
       // Auto close after 5 seconds to not be intrusive
       setTimeout(() => {
         setIsOpen(false)
@@ -32,6 +35,11 @@ export const FloatingContactButton = forwardRef<FloatingContactButtonRef, Floati
     useImperativeHandle(ref, () => ({
       openContactOptions,
     }))
+
+    // Hide tooltip after 10 seconds
+    setTimeout(() => {
+      setShowTooltip(false)
+    }, 10000)
 
     const contactOptions = [
       {
@@ -75,6 +83,17 @@ export const FloatingContactButton = forwardRef<FloatingContactButtonRef, Floati
 
     return (
       <div className="fixed bottom-6 right-6 z-50">
+        {/* Attractive Tooltip/Speech Bubble */}
+        {showTooltip && !isOpen && (
+          <div className="absolute bottom-20 right-0 mb-2 animate-bounce">
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg shadow-lg relative max-w-[200px] text-sm font-medium">
+              🚀 Need a website? Get FREE quote in 24hrs!
+              {/* Speech bubble arrow */}
+              <div className="absolute -bottom-2 right-6 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-purple-600"></div>
+            </div>
+          </div>
+        )}
+
         {/* Contact Options */}
         {isOpen && (
           <div className="absolute bottom-16 right-0 space-y-3 animate-in slide-in-from-bottom-2 duration-300">
@@ -97,8 +116,15 @@ export const FloatingContactButton = forwardRef<FloatingContactButtonRef, Floati
           </div>
         )}
 
-        {/* Main Floating Button */}
-        <div className="relative">
+        {/* Main Floating Button with Text */}
+        <div className="relative flex items-center gap-3">
+          {/* Text beside button - only show when closed */}
+          {!isOpen && (
+            <div className="hidden md:block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full shadow-lg animate-pulse">
+              <span className="text-sm font-semibold whitespace-nowrap">💬 Let's Talk!</span>
+            </div>
+          )}
+
           <Button
             onClick={handleToggle}
             size="lg"
@@ -115,9 +141,16 @@ export const FloatingContactButton = forwardRef<FloatingContactButtonRef, Floati
 
           {/* Pulse Animation Ring */}
           {!isOpen && (
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 animate-ping opacity-20 pointer-events-none"></div>
+            <div className="absolute right-0 inset-0 w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 animate-ping opacity-20 pointer-events-none"></div>
           )}
         </div>
+
+        {/* Mobile-only bottom text */}
+        {!isOpen && (
+          <div className="md:hidden absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap animate-pulse">
+            Tap for FREE quote! 🚀
+          </div>
+        )}
       </div>
     )
   },

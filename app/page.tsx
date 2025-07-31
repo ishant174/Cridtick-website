@@ -1153,7 +1153,7 @@ export default function Portfolio() {
                     className="hidden md:flex bg-gradient-to-r from-blue-600 to-purple-600"
                     onClick={handleContactButtonClick}
                   >
-                    Get Started
+                    Hire Now
                   </Button>
                   <Button
                     id="mobile-menu-toggle"
@@ -1257,7 +1257,7 @@ export default function Portfolio() {
                       className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 transform hover:scale-105 transition-all duration-300"
                       onClick={handleContactButtonClick}
                     >
-                      Start Your Shopify Project
+                      Hire me Now
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                     <Button
