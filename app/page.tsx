@@ -1227,14 +1227,10 @@ export default function Portfolio() {
                   </div>
 
                   <h1 id="hero-title" className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                    <span className="text-gray-900 dark:text-white animate-fade-in-up">Shopify Expert.</span>
+                    <span className="text-gray-900 dark:text-white animate-fade-in-up">Expert Shopify Developer &</span>
                     <br />
                     <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-fade-in-up animation-delay-200">
-                      WordPress Pro.
-                    </span>
-                    <br />
-                    <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent animate-fade-in-up animation-delay-400">
-                      PHP Developer!
+                      Web Development Services
                     </span>
                   </h1>
 
@@ -1287,6 +1283,32 @@ export default function Portfolio() {
                       <div className="text-sm text-gray-600 dark:text-gray-400">Rating</div>
                     </div>
                   </div>
+                  {/* Internal Links for SEO */}
+                  <div className="mt-8 flex flex-wrap gap-4 text-sm">
+                    <Link href="/blogs" className="text-blue-600 hover:underline">
+                      📖 Read our development blog
+                    </Link>
+                    <a
+                      href="#services-section"
+                      className="text-blue-600 hover:underline cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        document.getElementById("services-section")?.scrollIntoView({ behavior: "smooth" })
+                      }}
+                    >
+                      🛠️ View our services
+                    </a>
+                    <a
+                      href="#testimonials-section"
+                      className="text-blue-600 hover:underline cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        document.getElementById("testimonials-section")?.scrollIntoView({ behavior: "smooth" })
+                      }}
+                    >
+                      ⭐ Client testimonials
+                    </a>
+                  </div>
                 </div>
 
                 {/* Hero Carousel */}
@@ -1332,6 +1354,17 @@ export default function Portfolio() {
                   From custom Shopify themes to WordPress sites and PHP applications - we deliver professional web
                   development solutions that drive growth and exceed expectations
                 </p>
+                <div className="mt-8 flex flex-wrap justify-center gap-4">
+                  <Link href="/blogs/shopify-theme-customization-guide-2024" className="text-blue-600 hover:underline">
+                    📚 Shopify Development Guide
+                  </Link>
+                  <Link href="/blogs/wordpress-vs-shopify-comparison-2024" className="text-blue-600 hover:underline">
+                    🔍 WordPress vs Shopify
+                  </Link>
+                  <Link href="/blogs/php-laravel-best-practices-2024" className="text-blue-600 hover:underline">
+                    ⚡ PHP Laravel Best Practices
+                  </Link>
+                </div>
               </div>
 
               {/* Featured Services Grid */}
@@ -2043,6 +2076,31 @@ export default function Portfolio() {
                   Contact our Shopify experts and web development team today. Let's create something amazing together
                   with professional development services.
                 </p>
+                <div className="mt-6 flex flex-wrap justify-center gap-4">
+                  <Link href="/blogs" className="text-blue-600 hover:underline">
+                    📖 Read our latest articles
+                  </Link>
+                  <a
+                    href="#website-audit-section"
+                    className="text-blue-600 hover:underline cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      document.getElementById("website-audit-section")?.scrollIntoView({ behavior: "smooth" })
+                    }}
+                  >
+                    🔍 Get free website audit
+                  </a>
+                  <a
+                    href="#testimonials-section"
+                    className="text-blue-600 hover:underline cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      document.getElementById("testimonials-section")?.scrollIntoView({ behavior: "smooth" })
+                    }}
+                  >
+                    ⭐ See client reviews
+                  </a>
+                </div>
               </div>
 
               <div id="contact-content" className="grid lg:grid-cols-2 gap-12">
@@ -2292,63 +2350,89 @@ export default function Portfolio() {
                 <h4 className="font-semibold mb-4">Services</h4>
                 <ul className="space-y-2 text-gray-400">
                   <li>
-                    <a href="#website-audit-section" className="hover:text-white transition-colors">
-                      Free Technical Audit
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services-section" className="hover:text-white transition-colors">
+                    <a
+                      href="#services-section"
+                      className="hover:text-white transition-colors cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        document.getElementById("services-section")?.scrollIntoView({ behavior: "smooth" })
+                      }}
+                    >
                       Shopify Development
                     </a>
                   </li>
                   <li>
-                    <a href="#services-section" className="hover:text-white transition-colors">
+                    <a
+                      href="#services-section"
+                      className="hover:text-white transition-colors cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        document.getElementById("services-section")?.scrollIntoView({ behavior: "smooth" })
+                      }}
+                    >
                       WordPress Development
                     </a>
                   </li>
                   <li>
-                    <a href="#services-section" className="hover:text-white transition-colors">
+                    <a
+                      href="#services-section"
+                      className="hover:text-white transition-colors cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        document.getElementById("services-section")?.scrollIntoView({ behavior: "smooth" })
+                      }}
+                    >
                       PHP Development
                     </a>
                   </li>
                   <li>
-                    <a href="#services-section" className="hover:text-white transition-colors">
-                      E-commerce Solutions
+                    <a
+                      href="#website-audit-section"
+                      className="hover:text-white transition-colors cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        document.getElementById("website-audit-section")?.scrollIntoView({ behavior: "smooth" })
+                      }}
+                    >
+                      Free Technical Audit
                     </a>
                   </li>
                 </ul>
               </div>
               <div id="footer-company">
-                <h4 className="font-semibold mb-4">Company</h4>
+                <h4 className="font-semibold mb-4">Resources</h4>
                 <ul className="space-y-2 text-gray-400">
                   <li>
-                    <a href="#home-section" className="hover:text-white transition-colors">
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#testimonials-section" className="hover:text-white transition-colors">
-                      Testimonials
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#social-proof-section" className="hover:text-white transition-colors">
-                      Platforms
-                    </a>
-                  </li>
-                  <li>
                     <Link href="/blogs" className="hover:text-white transition-colors">
-                      Blogs
+                      Development Blog
                     </Link>
                   </li>
                   <li>
-                    <a href="#faq-section" className="hover:text-white transition-colors">
-                      FAQ
-                    </a>
+                    <Link
+                      href="/blogs/shopify-theme-customization-guide-2024"
+                      className="hover:text-white transition-colors"
+                    >
+                      Shopify Guide
+                    </Link>
                   </li>
                   <li>
-                    <a href="#contact-section" className="hover:text-white transition-colors">
-                      Contact
+                    <Link
+                      href="/blogs/wordpress-vs-shopify-comparison-2024"
+                      className="hover:text-white transition-colors"
+                    >
+                      Platform Comparison
+                    </Link>
+                  </li>
+                  <li>
+                    <a
+                      href="#testimonials-section"
+                      className="hover:text-white transition-colors cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        document.getElementById("testimonials-section")?.scrollIntoView({ behavior: "smooth" })
+                      }}
+                    >
+                      Client Reviews
                     </a>
                   </li>
                 </ul>
